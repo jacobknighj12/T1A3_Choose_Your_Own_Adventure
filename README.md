@@ -67,4 +67,13 @@ in a text format displayed in a terminal capable of running the current ruby 2.7
 
 ### R8 Develop a diagram that describes control flow for the app
 
-understood
+![Expected Control flow for the App](ControlFlow.png)
+
+### R9 Develop an implementation plan which:
+
+- outlines how each feature will be implemented and a checklist of tasks for each feature
+- prioritise the implementation of different features, or checklist items within a feature
+- provide a deadline, duration or other time indicator for each feature or checklist/checklist-item
+  In this trello they are ordered by Priority and all have and will be orginized by when they are started, partialy complete, fully complete and when they break.
+  Unfortunatly the automatic in build timelines are a premuim feature so I resorted to labling each feature with an expected finish date for each feature to be fully completed and functioning with the rest of the program.
+  ![T1A3_Trello](T1A3_Trello.jpg)
