@@ -8,7 +8,7 @@ class Player
     attr_reader :mana
     def initialize()
         puts "For best player experience, please enter your REAL name: "
-        @name = gets.strip 
+        @name = gets.strip
         while @name == ""
         puts "Unknown: Sorry, What was that I didnt catch it?"
         @name = gets.strip

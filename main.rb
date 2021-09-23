@@ -3,7 +3,10 @@ require_relative "Player" # Paste Player.rb here.
 
 player = Player.new
 chapter = Chapter1.new
-
+require ‘win32/sound’
+include Win32
+Sound.play(‘chimes.wav’)
+Sound.play(‘my_file.wav’)
 while true
     system("clear")
     player.print_self()
