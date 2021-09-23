@@ -77,3 +77,24 @@ in a text format displayed in a terminal capable of running the current ruby 2.7
   In this trello they are ordered by Priority and all have and will be orginized by when they are started, partialy complete, fully complete and when they break.
   Unfortunatly the automatic in build timelines are a premuim feature so I resorted to labling each feature with an expected finish date for each feature to be fully completed and functioning with the rest of the program.
   ![T1A3_Trello](T1A3_Trello.jpg)
+
+### R10 Design help documentation which includes a set of instructions which accurately describe how to use and install the application.
+
+You must include:
+
+- steps to install the application
+
+  To install this application you will need to download the files from git https://github.com/jacobknighj12/T1A3_Choose_Your_Own_Adventure
+  You will need to install all dependancies and then run the main.rb file to start the game!
+
+- any dependencies required by the application to operate
+
+  Ruby 2.7.2
+  probbably wallpapers 0.0.9 gem https://rubygems.org/gems/wallpapers Would love to use this for a element for when the player goes searching for a file I can scare them with a spooky background or somthing.
+  and maybe wavefile 1.1.1 gem https://rubygems.org/gems/wavefile Would love some background music
+  for the gems its if I can get the expected results from the use of them.
+
+- any system/hardware requirements
+
+  233 MHz processor, 64 MB of RAM, 1.5 GB of available hard drive space, and an SVGA-capable video card. are the minimum requirements
+  to run windows xp, if you can run that you will be able to run this.
