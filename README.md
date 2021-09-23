@@ -46,7 +46,8 @@ in a text format displayed in a terminal capable of running the current ruby 2.7
 
 - how the user will find out how to interact with / use each feature
   The user will be greeted with a simple, sweet and very direct way to interact, input and be given all of the information that is required to play it though text.
-  They will initially be shown their basic rescources and list out their options in context to the situation after entering their provided name for this game
+  They will initially be shown their basic rescources and list out their options in context to the situation after being prompted to enter their real life name for best
+  results
 
 - how the user will interact with / use each feature
 
