@@ -17,7 +17,7 @@ class Chapter1
 
     def print_intro(player_name)
 
-            puts "Chapter 1"
+            puts "This is the end"
             # puts "#{player_name} sees a #{@name}." may use this at some point?
             # puts @art same?
             puts @chapter_intro

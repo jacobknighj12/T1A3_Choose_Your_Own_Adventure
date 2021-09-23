@@ -1,4 +1,4 @@
-require_relative "Chapters/Chapter" # Paste Encounter.rb here.
+require_relative "Chapters/Chapter1" # Paste Encounter.rb here.
 require_relative "Player" # Paste Player.rb here.
 
 player = Player.new
