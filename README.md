@@ -63,3 +63,4 @@ in a text format displayed in a terminal capable of running the current ruby 2.7
 - how errors will be handled by the application and displayed to the user
   Whenever a user inputs a capital letter, there will be a displayed "You have entered a capital letter, please correct your input."
   Whenever a user inputs a word or selection the program doesnt recognise it will display "selection not recognized, please check spelling and retry."
+  If a user attempts to run the program without the dependancy gem, I will raise a prompt "X Gem not installed please go and install it before running"
