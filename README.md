@@ -47,8 +47,19 @@ in a text format displayed in a terminal capable of running the current ruby 2.7
 - how the user will find out how to interact with / use each feature
   The user will be greeted with a simple, sweet and very direct way to interact, input and be given all of the information that is required to play it though text.
   They will initially be shown their basic rescources and list out their options in context to the situation after being prompted to enter their real life name for best
-  results
+  results, all of the inputs will be told to be no capitals with correct spelling the same as listed in the text when prompted or otherwise hitting enter to continue.
+  the user will interact with the different story paths based on how they react to events, if they are brave or cautious each event they interact with will affect how the story
+  will conclude.
+  The puzzle gameplay will be a prompted opening of a file to progress the story, to them input what they see, hopefully I get this feature working fully as I hope.
 
 - how the user will interact with / use each feature
+  The user will interact with with the rescources through the given method as instructed, they will enter their response to a situation then will be accordingly given a
+  change to their rescources for how they interacted with that event.
+  The user interaction between their choices and the finnal result will keep them on edge about how to interact with the story and what they want for the charecters or
+  if they are just trying to win the game and get through it.
+  The puzzle gameplay will challenge the user to think outside of the box however if it is too challenging it will be directly solved for them as, not everyone has time for that
+  and there wont be any walkthroughs for the game, yet.
 
 - how errors will be handled by the application and displayed to the user
+  Whenever a user inputs a capital letter, there will be a displayed "You have entered a capital letter, please correct your input."
+  Whenever a user inputs a word or selection the program doesnt recognise it will display "selection not recognized, please check spelling and retry."
