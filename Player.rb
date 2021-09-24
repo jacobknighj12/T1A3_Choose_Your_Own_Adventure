@@ -1,5 +1,5 @@
 
-require_relative "blacklist"
+# require_relative "blacklist"
 class Player
     attr_reader :npc1
     attr_reader :name    
@@ -7,13 +7,16 @@ class Player
     attr_reader :gld    
     attr_reader :stam 
     attr_reader :mana
+    # attr_reader :blacklist 
+    #Got stuck on blacklist going to leave it for now... not a essential feature
     def initialize()
-        puts "For best player experience, please enter your REAL name: "
+        # blacklist.new
+        print "For best player experience, please enter your REAL name: "
         @name = gets.strip
-        while @name.include? @blacklist
-        puts "Unknown: Sorry, What was that I didnt catch it?"
-        @name = gets.strip
-        end
+        # while @name.include? @blacklist
+        # puts "Unknown: Sorry, What was that I didnt catch it?.... >:("
+        # @name = gets.strip
+        # end
         while @name == ""
         puts "Unknown: Sorry, What was that I didnt catch it?"
         @name = gets.strip
@@ -25,7 +28,7 @@ class Player
         @mana = 100
         else
         @hp = 100
-        @gld = 0
+        @gld = 10
         @stam = 100
         @mana = 0
         end
@@ -36,13 +39,16 @@ class Player
             @mana = 100
             else
             @hp = 100
-            @gld = 0
+            @gld = 10
             @stam = 100
             @mana = 0
             end
         puts "Unknown: So, your name is #{@name}"
         puts "Press the Enter key to continue..."
         gets 
+    end
+    def secret_found(reward)
+        @mana += reward
     end
 
     def print_self()

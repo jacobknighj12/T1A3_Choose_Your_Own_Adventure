@@ -16,7 +16,7 @@ while true
     chapter.perform(player)
     player.print_self()
     
-    if player.health == 0
+    if player.hp == 0
         break
     else
         puts "Press enter button to start the next chapter..."
