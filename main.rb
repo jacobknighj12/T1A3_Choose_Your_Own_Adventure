@@ -7,9 +7,10 @@ require_relative "Player" # Paste Player.rb here.
 # include Win32
 # Sound.play(‘chimes.wav’)
 # Sound.play(‘my_file.wav’)
+chapter_map = ["Chapters/Chapter1", "Chapters/Chapter2"]
 player = Player.new
-chapter = Chapter1.new
-
+chapter_map[1] = Chapter.new
+@chapters.map{|chapter| Chapter.new()}
 while true
     system("clear")
     player.print_self()

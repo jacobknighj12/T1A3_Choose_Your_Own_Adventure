@@ -19,30 +19,34 @@ class Player
         # @name = gets.strip
         # end
         while @name == ""
-        puts "Unknown: Sorry, What was that I didnt catch it?"
-        @name = gets.strip
+            puts "Unknown: Sorry, What was that I didnt catch it?"
+            @name = gets.strip
         end
         if @name.include? "James" #Wanted to add some Cheat codes
-        @hp = 1000
-        @gld = 20000
-        @stam = 1000
-        @mana = 100
-        else
-        @hp = 100
-        @gld = 10
-        @stam = 100
-        @mana = 0
+            @hp = 1000
+            @gld = 20000
+            @stam = 1000
+            @mana = 100
+            @time = 0
+            else
+            @hp = 100
+            @gld = 10
+            @stam = 100
+            @mana = 0
+            @time = 0
         end
         if @name.include? "Jacob" 
             @hp = 1000
             @gld = 20000
             @stam = 1000
             @mana = 100
+            @time = 0
             else
             @hp = 100
             @gld = 10
             @stam = 100
             @mana = 0
+            @time = 0
             end
         puts "Unknown: So, your name is #{@name}"
         puts "Press the Enter key to continue..."

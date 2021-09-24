@@ -30,7 +30,7 @@ class Chapter1
     # Well, #{player.name} #{@npc1} #{npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area,you may want to finish your drink and leave soon.
     def print_intro(player_name)
 
-            puts "Chapter 1"
+            puts "NOT CHAPTER 1 ANYMORE MOTHERFUCKKERERRRRS"
             # puts "#{player_name} sees a #{@name}." may use this at some point?
             # puts @art same?
             puts @chapter_intro
