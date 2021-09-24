@@ -1,14 +1,15 @@
 require_relative "Chapters/Chapter1" # Paste Encounter.rb here.
 require_relative "Player" # Paste Player.rb here.
-require "wallpaper"
-Wallpaper.set_path("Chapters/Chapter1")
-Wallpaper.run
+# require "wallpaper" MY GEMS AINT WORKING!
+# Wallpaper.set_path("Chapters/Chapter1")
+# Wallpaper.run
+# require ‘win32/sound’
+# include Win32
+# Sound.play(‘chimes.wav’)
+# Sound.play(‘my_file.wav’)
 player = Player.new
 chapter = Chapter1.new
-require ‘win32/sound’
-include Win32
-Sound.play(‘chimes.wav’)
-Sound.play(‘my_file.wav’)
+
 while true
     system("clear")
     player.print_self()
