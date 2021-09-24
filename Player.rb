@@ -7,6 +7,7 @@ class Player
     attr_reader :gld    
     attr_reader :stam 
     attr_reader :mana
+    attr_reader :time
     # attr_reader :blacklist 
     #Got stuck on blacklist going to leave it for now... not a essential feature
     def initialize()
@@ -50,6 +51,34 @@ class Player
     def secret_found(reward)
         @mana += reward
     end
+    def take_damage(damage)
+        @hp -= damage
+    end
+    def heal_damage(healing)
+        @hp += damage
+    end
+    def gain_gold(ammount)
+        @gld += ammount
+    end
+    def spend_gold(ammount)
+        @gld -= ammount
+    end
+    def spend_stamina(ammount)
+        @stam -= ammount
+    end
+    def gain_stamina(ammount)
+        @stam += ammount
+    end
+    def spend_mana(ammount)
+        @mana -= ammount
+    end
+    def gain_mana(ammount)
+        @mana += ammount
+    end
+    def spend_time(ammount)
+        @time -= ammount
+    end
+    
 
     def print_self()
         puts "#{@name} has #{@hp} health."
