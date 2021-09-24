@@ -1,6 +1,8 @@
 require_relative "Chapters/Chapter1" # Paste Encounter.rb here.
 require_relative "Player" # Paste Player.rb here.
-
+require "wallpaper"
+Wallpaper.set_path("Chapters/Chapter1")
+Wallpaper.run
 player = Player.new
 chapter = Chapter1.new
 require ‘win32/sound’

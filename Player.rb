@@ -18,7 +18,7 @@ class Player
         @stam = 100
         @mana = 0
         puts "Unknown: So, your name is #{@name}"
-        puts "Press any key to continue..."
+        puts "Press the Enter key to continue..."
         gets 
     end
 
