@@ -1,12 +1,10 @@
-class Chapter1
+class Chapter3
     # All chapters will have this data.
     attr_reader :npc1 # The name of the chapter, duh!
     attr_reader :options # The options, the player chooses!
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
     def initialize()
-        
-        # new_game_plus_string = " *#___=  -%%&* %% ##@1 //2|..\."
         @npc1 = ("Bob the barkeep")
         @npc1_voice = ("In his muffled tone")
         @chapter_intro = ("Your vision clears as you look around the room there is a man you recognize in front of you across the bar counter, you feel as though he has been serving you drinks for the past hour what was his name again? E!#2_^^& or somthing his the barkeeper so I will just call him that, #{@npc1}. Around you there are patrons thoughout the bar, you can't recognize any others, its loud and crowded it seems to be a buisy time. 'Well, #{@npc1} #{@npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area, you may want to finish your drink and leave soon.'") 
@@ -18,7 +16,7 @@ class Chapter1
         @options.push("Ask about the night terrors")
         @options.push("Get up, thank #{@npc1} for the drinks but you have to go")
         @options.push("Try to remember what you were doing before this")
-        @options.push("Coffee please," )#+ new_game_plus_string
+        @options.push("Coffee please")
         
         @consequences = []
         @consequences.push("You spend some more time drinking and lose time after a while #{@npc1} speaks up 'I dont think you want another for tonight, here; take your room keys and go to sleep for tonight.' He says somthing after you get up but you cant understand it and continue up to your room.")
@@ -32,7 +30,7 @@ class Chapter1
     # Well, #{player.name} #{@npc1} #{npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area,you may want to finish your drink and leave soon.
     def print_intro(player_name)
 
-            puts "Chapter 1"
+            puts "THIS IS THE END"
             # puts "#{player_name} sees a #{@name}." may use this at some point?
             # puts @art same?
             puts @chapter_intro
@@ -56,13 +54,6 @@ class Chapter1
     
         # All chapters will run perform method at some point possibly multiple times!
     def perform(player)
-        # if player.check_time <= 2 WHY ISNT THIS WORKING
-        #     p new_game_plus_string
-        #     new_game_plus_string = " I will need it for this game"
-        # else
-        #     p new_game_plus_string
-        #     new_game_plus_string = "*#___=  -%%&* %%##@1////...."
-        # end
             print_intro(player.name)
             print_options
             players_choice = get_player_choice

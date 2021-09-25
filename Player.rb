@@ -33,7 +33,7 @@ class Player
             @gld = 10
             @stam = 100
             @mana = 0
-            @time = 0
+            @time = 3
         end
         if @name.include? "Jacob" 
             @hp = 1000
@@ -46,7 +46,7 @@ class Player
             @gld = 10
             @stam = 100
             @mana = 0
-            @time = 0
+            @time = 3
             end
         puts "Unknown: So, your name is #{@name}"
         puts "Press the Enter key to continue..."
@@ -81,6 +81,9 @@ class Player
     end
     def spend_time(ammount)
         @time -= ammount
+    end
+    def check_time()
+        return @time
     end
     
 

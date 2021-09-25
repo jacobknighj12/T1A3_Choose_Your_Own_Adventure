@@ -1,4 +1,4 @@
-class Chapter1
+class Chapter2
     # All chapters will have this data.
     attr_reader :npc1 # The name of the chapter, duh!
     attr_reader :options # The options, the player chooses!
@@ -30,7 +30,7 @@ class Chapter1
     # Well, #{player.name} #{@npc1} #{npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area,you may want to finish your drink and leave soon.
     def print_intro(player_name)
 
-            puts "NOT CHAPTER 1 ANYMORE MOTHERFUCKKERERRRRS"
+            puts "NOT CHAPTER 1 ANYMORE"
             # puts "#{player_name} sees a #{@name}." may use this at some point?
             # puts @art same?
             puts @chapter_intro
