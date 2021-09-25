@@ -33,7 +33,7 @@ class Player
             @gld = 10
             @stam = 100
             @mana = 0
-            @time = 3
+            @time = 0
         end
         if @name.include? "Jacob" 
             @hp = 1000
@@ -46,7 +46,7 @@ class Player
             @gld = 10
             @stam = 100
             @mana = 0
-            @time = 3
+            @time = 0
             end
         puts "Unknown: So, your name is #{@name}"
         puts "Press the Enter key to continue..."

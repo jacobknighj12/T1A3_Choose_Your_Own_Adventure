@@ -5,9 +5,9 @@ class Chapter2
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
     def initialize()
-        @npc1 = ("Bob the barkeep")
-        @npc1_voice = ("In his muffled tone")
-        @chapter_intro = ("Your vision clears as you look around the room there is a man you recognize in front of you across the bar counter, you feel as though he has been serving you drinks for the past hour what was his name again? E!#2_^^& or somthing his the barkeeper so I will just call him that, #{@npc1}. Around you there are patrons thoughout the bar, you can't recognize any others, its loud and crowded it seems to be a buisy time. 'Well, #{@npc1} #{@npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area, you may want to finish your drink and leave soon.'") 
+        @npc1 = ("")
+        @npc1_voice = ("")
+        @chapter_intro = ("") 
         #the sentence doesnt like to be shown over multiple lines so it will be one line
         #will leave intro's for the scene and surroundings of the player
         
@@ -30,7 +30,7 @@ class Chapter2
     # Well, #{player.name} #{@npc1} #{npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area,you may want to finish your drink and leave soon.
     def print_intro(player_name)
 
-            puts "NOT CHAPTER 1 ANYMORE"
+            puts "Chapter 2"
             # puts "#{player_name} sees a #{@name}." may use this at some point?
             # puts @art same?
             puts @chapter_intro

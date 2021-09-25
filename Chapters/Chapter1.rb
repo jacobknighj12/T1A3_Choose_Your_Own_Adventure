@@ -4,8 +4,9 @@ class Chapter1
     attr_reader :options # The options, the player chooses!
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
+    attr_reader :door_locked
     def initialize()
-        
+        @door_locked = false
         # new_game_plus_string = " *#___=  -%%&* %% ##@1 //2|..\."
         @npc1 = ("Bob the barkeep")
         @npc1_voice = ("In his muffled tone")
@@ -72,16 +73,20 @@ class Chapter1
                 when 0
                     player.spend_gold(10)
                     player.spend_time(1)
+                    
                 when 1
                     player.spend_time(1)
+                    door_locked = true
                 when 2
-                    
+                    door_locked = true
                 when 3
-
+                    
                 when 4
                 player.secret_found(10)
+                 door_locked = true
             end
     end
-    
-
+    def is_door_locked()
+        return @door_locked
+    end
 end
