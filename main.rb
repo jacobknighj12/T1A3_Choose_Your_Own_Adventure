@@ -1,6 +1,6 @@
 require_relative "Chapters/Chapter1" # Paste Encounter.rb here.
 require_relative "Chapters/Chapter2"
-require_relative "Chapters/Chapter2.1"
+require_relative "Chapters/Chapter2_1"
 require_relative "Chapters/Chapter3"
 require_relative "Player" # Paste Player.rb here.
 # require "wallpaper" MY GEMS AINT WORKING!
@@ -10,7 +10,7 @@ require_relative "Player" # Paste Player.rb here.
 # include Win32
 # Sound.play(‘chimes.wav’)
 # Sound.play(‘my_file.wav’)
-p chapter_map = ["Chapter1", "Chapter2", "Chapter3"]
+chapter_map = []
 player = Player.new
 chapter_map[0] = Chapter1.new
 chapter_map[1] = Chapter2.new
@@ -25,13 +25,15 @@ while true
     player.print_self()
     chapter_map[index].perform(player)
     player.print_self()
-    if index == 0 && door_locked = false
+    if index == 0 && door_locked == false
         index = 3
     else
     index += 1
     end
     if player.hp == 0
-        break
+        puts "YOU DIED.. GAME OVER" 
+        puts "continue? Y/N"
+        gets
     else
         puts "Press enter button to start the next chapter..."
         gets

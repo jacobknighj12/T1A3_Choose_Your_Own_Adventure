@@ -23,7 +23,7 @@ class Player
             @name = gets.strip
         end
         if @name.include? "James" #Wanted to add some Cheat codes
-            @hp = 1000
+            @hp = 100
             @gld = 20000
             @stam = 1000
             @mana = 100
@@ -36,7 +36,7 @@ class Player
             @time = 0
         end
         if @name.include? "Jacob" 
-            @hp = 1000
+            @hp = 100
             @gld = 20000
             @stam = 1000
             @mana = 100
@@ -61,6 +61,9 @@ class Player
     def heal_damage(healing)
         @hp += damage
     end
+    def check_hp()
+        return @hp
+    end
     def gain_gold(ammount)
         @gld += ammount
     end
@@ -78,6 +81,9 @@ class Player
     end
     def gain_mana(ammount)
         @mana += ammount
+    end
+    def check_mana()
+        return @mana
     end
     def spend_time(ammount)
         @time -= ammount
