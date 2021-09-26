@@ -4,9 +4,10 @@ class Chapter1
     attr_reader :options # The options, the player chooses!
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
-    attr_reader :door_locked
+    
+    
     def initialize()
-        @door_locked = false
+         
         # new_game_plus_string = " *#___=  -%%&* %% ##@1 //2|..\."
         @npc1 = ("Bob the barkeep")
         @npc1_voice = ("In his muffled tone")
@@ -19,12 +20,12 @@ class Chapter1
         @options.push("Ask about the night terrors")
         @options.push("Get up, thank #{@npc1} for the drinks but you have to go")
         @options.push("Try to remember what you were doing before this")
-        @options.push("Coffee please," )#+ new_game_plus_string
+        @options.push("Coffee please," )#+ new_game_plus_string it didnt really work and i dont want to make it too obvious
         
         @consequences = []
         @consequences.push("You spend some more time drinking and lose time after a while #{@npc1} speaks up 'I dont think you want another for tonight, here; take your room keys and go to sleep for tonight.' He says somthing after you get up but you cant understand it and continue up to your room.")
         @consequences.push("'The night terrors. *#{@npc1}* strokes his beard, there have been plenty of storys of people going missing from their beds at night if they dont lock the door. Never found any of the missing people so far heard a description of it once ho'ever, its been said it has a face of fishing hooks with no eyes makes me shrink to think 'bout.' after talking for a while #{@npc1} tells you to head back to your room and to be safe be absoultely sure you lock your door.")
-        @consequences.push("'Wait, your room key you already paid for it 'member? Be sure to lock yer door....'")
+        @consequences.push("'Wait, your room key you already paid for it 'member?' he hands you your key and looks strangely at you, you walk off upstairs to your room")
         @consequences.push("Haze pushes into your mind, it hurts to think you feel like you paid for your drinks and room but then slowly started feeling as if somthing was starting to.. sit on your shoulder? You ask for your room key from #{@npc1} and head up the stairs to your room. #{@npc1} says somthing after you get up but you cant understand it and continue up to your room.")
         @consequences.push("Haze pushes into your mind, it hurts to think the words you expected to come from your mouth dont feel like your own. Something feels different. 'You aight there buddy? #{@npc1} says #{@npc1_voice} *You look up from holding your head to see concern in the old mans face* 'ere, yer key go to bed and take rest for the night, remember to lock your door.' ")
         
@@ -73,20 +74,22 @@ class Chapter1
                 when 0
                     player.spend_gold(10)
                     player.spend_time(1)
+                    player.lock_door(false)
                     
                 when 1
                     player.spend_time(1)
-                    door_locked = true
+                    player.lock_door(true)
+                   
                 when 2
-                    door_locked = true
+                    player.lock_door(true)
+                   
                 when 3
-                    
+                    player.lock_door(false)
                 when 4
                 player.secret_found(10)
-                 door_locked = true
+                 player.lock_door(true)
+                
             end
     end
-    def is_door_locked()
-        return @door_locked
-    end
+    
 end

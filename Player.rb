@@ -8,9 +8,12 @@ class Player
     attr_reader :stam 
     attr_reader :mana
     attr_reader :time
+    attr_reader :door_locked
+    
     # attr_reader :blacklist 
     #Got stuck on blacklist going to leave it for now... not a essential feature
     def initialize()
+        @door_locked #why you no work
         # blacklist.new
         print "For best player experience, please enter your REAL name: "
         @name = gets.strip
@@ -93,7 +96,14 @@ class Player
     def check_time()
         return @time
     end
-    
+    def lock_door(state)
+        @door_locked == state
+        p state
+        p @door_locked
+    end
+    def is_door_locked()
+        return @door_locked
+    end
 
     def print_self()
         puts "#{@name} has #{@hp} health."

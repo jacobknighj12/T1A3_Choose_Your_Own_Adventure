@@ -1,8 +1,8 @@
-require_relative "Chapters/Chapter1" # Paste Encounter.rb here.
+require_relative "Chapters/Chapter1" 
 require_relative "Chapters/Chapter2"
 require_relative "Chapters/Chapter2_1"
 require_relative "Chapters/Chapter3"
-require_relative "Player" # Paste Player.rb here.
+require_relative "Player" 
 # require "wallpaper" MY GEMS AINT WORKING!
 # Wallpaper.set_path("Chapters/Chapter1") WHY IS IT SO HARD TO GET YOU GUYS TO DO YOUR JOB!
 # Wallpaper.run
@@ -18,16 +18,22 @@ chapter_map[2] = Chapter3.new
 chapter_map[3] = Chapter2_1.new
 index = 0
 time = player.check_time
-door_locked = chapter_map[0].is_door_locked
+door_locked = player.is_door_locked
 # @chapters.map{|chapter| Chapter.new()} I dont know how to use this I know how to increment and use arrays so i will ignore this for now
 while true
     system("clear")
     player.print_self()
     chapter_map[index].perform(player)
     player.print_self()
-    if index == 0 && door_locked == false
+    if index == 0  
+        p door_locked
+        if door_locked == false
         index = 3
+        else
+        index += 1 
+        end
     else
+        p door_locked
     index += 1
     end
     if player.hp == 0
@@ -35,7 +41,7 @@ while true
         puts "continue? Y/N"
         gets
     else
-        puts "Press enter button to start the next chapter..."
+        puts "Press Enter to start the next chapter..."
         gets
     end
 end
