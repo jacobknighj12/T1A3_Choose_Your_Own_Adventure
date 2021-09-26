@@ -22,7 +22,8 @@ class Player
             puts "Unknown: Sorry, What was that I didnt catch it?"
             @name = gets.strip
         end
-        if @name.include? "James" #Wanted to add some Cheat codes
+        if @name.include? "Bob" #Wanted to add some Cheat codes
+            puts "secret inputed, this is no longer a normal run."
             @hp = 100
             @gld = 20000
             @stam = 1000
@@ -36,6 +37,7 @@ class Player
             @time = 0
         end
         if @name.include? "Jacob" 
+            puts "secret inputed, this is no longer a normal run."
             @hp = 100
             @gld = 20000
             @stam = 1000

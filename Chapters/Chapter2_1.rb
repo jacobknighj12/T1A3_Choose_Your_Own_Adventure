@@ -20,14 +20,14 @@ class Chapter2_1
         @options.push("Push the creature to the side and run away")
         @options.push("Attempt to light the bedside lamp and hold it towards the creature(50%)")
         if @current_mana != 0
-        @options.push("You see a glimmer from inside the creature, grab it?(-20 mana)")
+        @options.push("You see a glimmer from inside the creature, grab it?(-1 mana)")
         end
         @consequences = []
-        @consequences.push("")
-        @consequences.push("")
-        @consequences.push("")
-        @consequences.push("")
-        @consequences.push("")
+        @consequences.push("You jump up and wing your taveling bag with all your weight, it slams into the #{@npc1} against the weight of the imapct the creature is flung into the wall, momentarily stunned but after that breif moment it lunches itself towards you and attacks you, burying its teeth into you, you wince in pain and tear it off of you, knowing that hitting it again would do nothing you run out with your things and sprint out of the inn.")
+        @consequences.push("Slowly reaching into your bag you find your knife, clasping your hand around it jumping up and with a single motion drawing it from your bag and embedding it into the #{@npc1} you notice as you hold it against the thing, your knife has a dull glow, the #{@npc1} hisses in pain with #{@npc1_voice} and take off breaking out though the thatched roof. You leave the inn going outside")
+        @consequences.push("You grab your bag while jumping up and pushing your weight forwards, colliding with #{@npc1} slamming it against the wall, for a breif moment it is stunned and you are able to sprint out of the inn")
+        @consequences.push("You roll the dice.")
+        @consequences.push("You reach, but not with your hand, but somthing else you feel as though you can pull it away reaching with your concience it feels like pushing through mud, till you grab onto the light. You feel stronger, the weight of the mud, more like soup you pull back to see the #{@npc1} colapse on itself with incredible force snaps and cracks from all of its bones and crumple into a lump of remains. You leave the inn going outside")
         
         
     end
@@ -51,6 +51,7 @@ class Chapter2_1
             puts "...Your paralyzed. All you can do is open your eyes to the thing that now breathes even more cold air around you, theres only moonlight silhouetting the thing, with a few highlights over however it giving you more then enough information. Around what you assume is the 'face' is long hook like teeth jutting out more than an arms length outwards, its form looks like that of a leech made of bone and sparse flesh, of that flesh that it has is glistening as though being completely frozen."
             puts "Press the Enter key to continue..."
             gets
+            puts "The #{npc1} comes closer slowly creeping forwards, you feel like you can move again."
     end
 
     def print_options()
@@ -87,7 +88,7 @@ class Chapter2_1
                 when 3
                     roll = rand(2)
                 if roll == 1
-                    puts "You deftly light the lamp and hold it towards the creature, increasing the output and warming the room, #{@npc1} Screams and #{@npc1_voice}. It takes off breaking out though the thatched roof into the moonlit night."
+                    puts "You deftly light the lamp and hold it towards the creature, increasing the output and warming the room, #{@npc1} Screams and #{@npc1_voice}. It takes off breaking out though the thatched roof into the moonlit night. You walk out and leave the inn."
                 else
                     puts "You falter, drop the match after failing to strike it to flame, in that moment The #{npc1} Launches forwards. Your vision goes dark hot liquid is felt on your skin, you start to feel hooks ripping though your arms but then... nothing."
                     player.take_damage(100)
