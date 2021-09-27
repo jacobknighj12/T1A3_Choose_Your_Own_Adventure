@@ -7,7 +7,7 @@ class Chapter1
     
     
     def initialize()
-         
+        
         # new_game_plus_string = " *#___=  -%%&* %% ##@1 //2|..\."
         @npc1 = ("Bob the barkeep")
         @npc1_voice = ("In his muffled tone")

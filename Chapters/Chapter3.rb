@@ -5,18 +5,30 @@ class Chapter3
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
     def initialize()
-        @npc1 = ("")
-        @npc1_voice = ("")
+        @npc1 = ("
+            ▄▀▀█▄▄▄▄  ▄▀▀▄ ▀▄  ▄▀▀▀█▀▀▄  ▄▀▀█▀▄    ▄▀▀▀█▀▀▄  ▄▀▀▄ ▀▀▄ 
+            ▐  ▄▀   ▐ █  █ █ █ █    █  ▐ █   █  █  █    █  ▐ █   ▀▄ ▄▀ 
+              █▄▄▄▄▄  ▐  █  ▀█ ▐   █     ▐   █  ▐  ▐   █     ▐     █   
+              █    ▌    █   █     █          █        █            █   
+             ▄▀▄▄▄▄   ▄▀   █    ▄▀        ▄▀▀▀▀▀▄   ▄▀           ▄▀    
+             █    ▐   █    ▐   █         █       █ █             █     
+             ▐        ▐        ▐         ▐       ▐ ▐             ▐     ")
+        @npc1_voice = ("Can only be described as
+            A8D9
+D1C2H9I1D9J9H3E0
+H0C3J4D8D5
+F9C1D9G5G0J2A1C1
+J0B1D9J4C3D9B0")
         @chapter_intro = ("") 
         #the sentence doesnt like to be shown over multiple lines so it will be one line
         #will leave intro's for the scene and surroundings of the player
         
         @options = []
-        @options.push("fight one at a time")
-        @options.push("pull some their light(10 mana required)")
-        @options.push("pull 10's of lights(50 mana required)")
-        @options.push("pull 100's of lights(1000 mana required)")
-        @options.push("pull 1000's of lights(1000 mana required)")
+        @options.push("fight one at a time with your knife")
+        @options.push("Tear some their light out of their bodys(10 mana required)")
+        @options.push("Tear 10's of lights out of their bodys(50 mana required)") 
+        @options.push("Tear 100's of lights out of their bodys(320 mana required)")
+        @options.push("Tear 1000's of lights out of their bodys(1000 mana required)")
         
         @consequences = []
         @consequences.push("")
