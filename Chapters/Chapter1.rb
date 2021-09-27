@@ -1,17 +1,17 @@
 class Chapter1
     # All chapters will have this data.
-    attr_reader :npc1 # The name of the chapter, duh!
+    attr_reader :npc1 # Name of the charecter your talking too
     attr_reader :options # The options, the player chooses!
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
     
     
-    def initialize()
+    def initialize(player)
         
         # new_game_plus_string = " *#___=  -%%&* %% ##@1 //2|..\."
         @npc1 = ("Bob the barkeep")
         @npc1_voice = ("In his muffled tone")
-        @chapter_intro = ("Your vision clears as you look around the room there is a man you recognize in front of you across the bar counter, you feel as though he has been serving you drinks for the past hour what was his name again? E!#2_^^& or somthing his the barkeeper so I will just call him that, #{@npc1}. Around you there are patrons thoughout the bar, you can't recognize any others, its loud and crowded it seems to be a buisy time. 'Well, #{@npc1} #{@npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area, you may want to finish your drink and leave soon.'") 
+        @chapter_intro = ("Unknown:'Hey, you alright #{player.name}?'Your vision clears as you look around the room there is a man you recognize in front of you across the bar counter, you feel as though he has been serving you drinks for the past hour what was his name again? E!#2_^^& or somthing his the barkeeper so I will just call him that, #{@npc1}. Around you there are patrons thoughout the bar, you can't recognize any others, its loud and crowded it seems to be a buisy time. 'Well, #{@npc1} #{@npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area, you may want to finish your drink and leave soon.'") 
         #the sentence doesnt like to be shown over multiple lines so it will be one line
         #will leave intro's for the scene and surroundings of the player
         
@@ -87,9 +87,10 @@ class Chapter1
                     player.lock_door(false)
                 when 4
                 player.secret_found(10)
-                 player.lock_door(true)
+                player.lock_door(true)
                 
             end
+            player.spend_time(1)
     end
     
 end

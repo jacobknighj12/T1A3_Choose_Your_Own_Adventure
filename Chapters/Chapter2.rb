@@ -1,10 +1,11 @@
 class Chapter2
     # All chapters will have this data.
-    attr_reader :npc1 # The name of the chapter, duh!
+    attr_reader :npc1 # Name of the charecter your talking too
     attr_reader :options # The options, the player chooses!█░░█░█░█
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
-    def initialize()
+    def initialize(player)
+        
         @npc1 = ("Samos")
         @npc1_voice = ("like a creaking old oak")
         @chapter_intro = ("When the morning breaks, many voices from all around are all saying similar things, how cold the night was, they thought they saw somthing, a man went missing in his room because he left it unlocked, a strange hole appearing in the roof of the inn. You are sitting out the front of the inn while feeding a campfire you made to warm yourself up from the cold of last night, a man waring strange attire a flowing robe with ornaments and strange letters walks over to you Unknown:'Do you mind if I sit?' In a voice you can only describe as #{@npc1_voice} as he gestures to a space next to the fire, he sits down without waiting for a response, #{@npc1} 'My name is #{@npc1}. I know what _░░░█░█ you, #{player.name}. However I need your help, if you do I can help you, if you wish to see me again go to the ruins in the northern forrest'  you glace to the fire for a moment as it crackles then look back, and his gone.") 

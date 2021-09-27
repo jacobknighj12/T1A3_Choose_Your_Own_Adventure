@@ -8,13 +8,13 @@ require 'tty-link'
 chapter_map = []
 player = Player.new
 chapter_map[0] = Chapter1.new
-chapter_map[1] = Chapter2.new
+chapter_map[1] = Chapter2.new(player)
 chapter_map[2] = Chapter3.new
 chapter_map[3] = Chapter2_1.new
 index = 0
-time = player.check_time
-p player
-door_locked = player.is_door_locked
+
+
+
 
 puts Rainbow("this is red").red + " and " + Rainbow("this on yellow bg").bg(:yellow) + " and " + Rainbow("even bright underlined!").underline.bright
 puts "This is a choose your own adventure horror game. Please take the time to set the terminal in full screen"
@@ -28,22 +28,31 @@ while true
     system("clear")
     player.print_self()
     chapter_map[index].perform(player)
+    door_locked = player.is_door_locked
+    time = player.check_time
     player.print_self()
     if index == 0  
-        p door_locked
+        
         if door_locked == false
         index = 3
         else
         index += 1 
         end
     else
-        p door_locked
+        
+        puts "Your not in chapter 1" # REMOVE LATER FOR DEBUGGING PURPOSES
+        
     index += 1
     end
     if player.hp == 0
         puts "YOU DIED.. GAME OVER" 
-        puts "continue? Y/N"
-        gets
+        puts "Retry? Y/N"
+        input = gets
+        if input.include? "Y"
+            "ANYWAY!"
+            player.heal_damage(100)
+            index = 0
+        end
     else
         puts "Press Enter to start the next chapter..."
         gets

@@ -13,14 +13,14 @@ class Player
     # attr_reader :blacklist 
     #Got stuck on blacklist going to leave it for now... not a essential feature
     def initialize()
-        if @time <= 2 #time is a placeholder here need to change for newgame+
-            secret_title = "Hell_Loop" #Ignore this if your looking here before playing the game, nothing to see here move along.
-            else
-                secret_title = " █░░░_░██░ "
-            end
-        @door_locked #why you no work
+    #     if @time <= 2 #time is a placeholder here need to change for newgame+
+    #         secret_title = "Hell_Loop" #Ignore this if your looking here before playing the game, nothing to see here move along.
+    #         else
+    #             secret_title = " █░░░_░██░ "
+    #         end
+        #why you no work
         # blacklist.new
-        puts "Welcome too" + Rainbow(secret_title).red 
+        # puts "Welcome too" + Rainbow(secret_title).red 
         print "For best player experience, please enter your REAL name: "
         @name = gets.strip
         # while @name.include? @blacklist
@@ -105,9 +105,8 @@ class Player
         return @time
     end
     def lock_door(state)
-        @door_locked == state
-        p state
-        p @door_locked
+        @door_locked = state
+        
     end
     def is_door_locked()
         return @door_locked

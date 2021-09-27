@@ -14,11 +14,7 @@ class Chapter3
              █    ▐   █    ▐   █         █       █ █             █     
              ▐        ▐        ▐         ▐       ▐ ▐             ▐     ")
         @npc1_voice = ("Can only be described as
-            A8D9
-D1C2H9I1D9J9H3E0
-H0C3J4D8D5
-F9C1D9G5G0J2A1C1
-J0B1D9J4C3D9B0")
+            A8D9__█░░█░█░█_D1C2H█░█░█9I1D█░░█░░9J9H3E0")
         @chapter_intro = ("") 
         #the sentence doesnt like to be shown over multiple lines so it will be one line
         #will leave intro's for the scene and surroundings of the player

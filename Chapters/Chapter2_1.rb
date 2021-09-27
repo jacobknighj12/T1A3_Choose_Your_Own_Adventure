@@ -1,11 +1,11 @@
 class Chapter2_1
     # All chapters will have this data.
-    attr_reader :npc1 # The name of the chapter, duh!
+    attr_reader :npc1 # Name of the charecter your talking too
     attr_reader :options # The options, the player chooses!
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
     
-    def initialize()
+    def initialize(player)
         # oh no you didnt lock your door!
         @npc1 = ("Night terror")
         @npc1_voice = ("a rasping wheeze echos")
@@ -47,7 +47,10 @@ class Chapter2_1
             puts "3. Squeeze your eyes tightly and pretend you dont exsist"
             puts "4. Slowly slide your hand towards your bag and reach for your knife"
             print "Enter your choice:"
-            gets
+            input = gets
+            if input.include? "2"
+                puts "You think to yourself, why would I say that..."
+            end
             puts "...Your paralyzed. All you can do is open your eyes to the thing that now breathes even more cold air around you, theres only moonlight silhouetting the thing, with a few highlights over however it giving you more then enough information. Around what you assume is the 'face' is long hook like teeth jutting out more than an arms length outwards, its form looks like that of a leech made of bone and sparse flesh, of that flesh that it has is glistening as though being completely frozen."
             puts "Press the Enter key to continue..."
             gets
@@ -96,7 +99,9 @@ class Chapter2_1
                 when 4
                     puts "option 5"
                     player.gain_mana(45)
+                    player.spend_stamina(25)
                 end
+                player.spend_time(1)
     end
     
 
