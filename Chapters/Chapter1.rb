@@ -20,7 +20,7 @@ class Chapter1
         @options.push("Ask about the night terrors")
         @options.push("Get up, thank #{@npc1} for the drinks but you have to go")
         @options.push("Try to remember what you were doing before this")
-        @options.push("Coffee please," )#+ new_game_plus_string it didnt really work and i dont want to make it too obvious
+        @options.push("Coffee please," )#+ new_game_plus_string it didnt really work and i dont want to make it too obvious█░░█░█░█
         
         @consequences = []
         @consequences.push("You spend some more time drinking and lose time after a while #{@npc1} speaks up 'I dont think you want another for tonight, here; take your room keys and go to sleep for tonight.' He says somthing after you get up but you cant understand it and continue up to your room.")
@@ -31,7 +31,7 @@ class Chapter1
         
         
     end
-    # Well, #{player.name} #{@npc1} #{npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area,you may want to finish your drink and leave soon.
+    
     def print_intro(player_name)
 
             puts "Chapter 1"

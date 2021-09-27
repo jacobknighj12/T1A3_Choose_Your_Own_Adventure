@@ -29,30 +29,32 @@ class Player
             puts "secret inputed, this is no longer a normal run."
             @hp = 100
             @gld = 20000
-            @stam = 1000
+            @stam = 100
             @mana = 100
             @time = 0
-            else
-            @hp = 100
-            @gld = 10
-            @stam = 100
-            @mana = 0
-            @time = 0
-        end
-        if @name.include? "Jacob" 
+            
+        elsif @name.include? "Jacob" 
             puts "secret inputed, this is no longer a normal run."
             @hp = 100
             @gld = 20000
             @stam = 1000
             @mana = 100
             @time = 0
-            else
-            @hp = 100
-            @gld = 10
-            @stam = 100
-            @mana = 0
-            @time = 0
-            end
+            
+        elsif @name.include? "Samos" 
+                puts "secret inputed, this is no longer a normal run."
+                @hp = 100
+                @gld = 20000
+                @stam = 1000
+                @mana = 10000
+                @time = 200
+                else
+                @hp = 100
+                @gld = 10
+                @stam = 100
+                @mana = 0
+                @time = 0
+                end
         puts "Unknown: So, your name is #{@name}"
         puts "Press the Enter key to continue..."
         gets 

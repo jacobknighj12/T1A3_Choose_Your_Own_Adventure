@@ -1,7 +1,7 @@
 class Chapter2
     # All chapters will have this data.
     attr_reader :npc1 # The name of the chapter, duh!
-    attr_reader :options # The options, the player chooses!█░█░░█░█░█
+    attr_reader :options # The options, the player chooses!█░░█░█░█
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
     def initialize()

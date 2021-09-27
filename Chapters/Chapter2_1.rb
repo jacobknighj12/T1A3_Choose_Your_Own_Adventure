@@ -95,9 +95,8 @@ class Chapter2_1
                 end
                 when 4
                     puts "option 5"
-                
-                
-            end
+                    player.gain_mana(45)
+                end
     end
     
 
