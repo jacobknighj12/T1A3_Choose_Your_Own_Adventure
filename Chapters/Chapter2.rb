@@ -8,19 +8,29 @@ class Chapter2
         
         @npc1 = ("Samos")
         @npc1_voice = ("like a creaking old oak")
-        @chapter_intro = ("When the morning breaks, many voices from all around are all saying similar things, how cold the night was, they thought they saw somthing, a man went missing in his room because he left it unlocked, a strange hole appearing in the roof of the inn. You are sitting out the front of the inn while feeding a campfire you made to warm yourself up from the cold of last night, a man waring strange attire a flowing robe with ornaments and strange letters walks over to you Unknown:'Do you mind if I sit?' In a voice you can only describe as #{@npc1_voice} as he gestures to a space next to the fire, he sits down without waiting for a response, #{@npc1} 'My name is #{@npc1}. I know what _░░░█░█ you, #{player.name}. However I need your help, if you do I can help you, if you wish to see me again go to the ruins in the northern forrest'  you glace to the fire for a moment as it crackles then look back, and his gone.") 
+        @chapter_intro = ("When the morning breaks, many voices from all around are all saying similar things, how cold the night was, they thought they saw somthing, a man went missing in his room because he left it unlocked, a strange hole appearing in the roof of the inn. You are sitting out the front of the inn while feeding a campfire you made to warm yourself up from the cold of last night, a man waring strange attire a flowing robe with ornaments and strange letters walks over to you Unknown:'Do you mind if I sit?' In a voice you can only describe as #{@npc1_voice} as he gestures to a space next to the fire, he sits down without waiting for a response, #{@npc1} 'My name is #{@npc1}. I know what _░░░█░█ you, #{player.name}. However I need your help, if you do I can help you, if you wish to see me again go to the ruins in the northern forrest'  you glace to the fire for a moment as it crackles then look back, and his gone. 'I'm not sure whats up with that man, but I need to find out whats going on with me I keep feeling weirder every moment.'") 
         #the sentence doesnt like to be shown over multiple lines so it will be one line
         #will leave intro's for the scene and surroundings of the player
         
         @options = []
-        @options.push("")
-        @options.push("")
-        @options.push("")
-        @options.push("")
-        @options.push("")
+        if player.check_hp != 100
+            if player.gld != 0
+             @options.push("Go out and buy some things to patch your wounds")
+            end
+        end
+        @options.push("Go out to the north forrests ruins.")
+        @options.push("Ask around if anyone saw the night terror and attempt to find where it went.")
+        if player.mana != 0
+        @options.push("Hold your hand out and attempt to recreate the power you felt recently")
+        end
+        if player.time <= 2
+        @options.push("'Damn why do I feel like I have been here before'")
+        end
         
         @consequences = []
-        @consequences.push("")
+        if player.hp 
+        end
+        @consequences.push("You go out to try and find somwhere like a herbalists open to get some basic supplies to fix yourself up, fortunately.(1 gold per hp healed)")
         @consequences.push("")
         @consequences.push("")
         @consequences.push("")

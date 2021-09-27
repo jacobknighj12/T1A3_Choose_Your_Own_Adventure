@@ -6,8 +6,8 @@ class Chapter1
     attr_reader :chapter_intro # Intro for the chapter!
     
     
-    def initialize(player)
-        
+    def initialize()
+        # name = player_name() SUDDENLY PLAYER NAME STOPS WORKING I DONT KNOW WHY IT WAS LITTERALLY JUST WORKING AND BEFORE THEN IT WASENT WORKING BUT NOW ITS NOT WORKING AGAIN AND ITS AN ISSUE
         # new_game_plus_string = " *#___=  -%%&* %% ##@1 //2|..\."
         @npc1 = ("Bob the barkeep")
         @npc1_voice = ("In his muffled tone")

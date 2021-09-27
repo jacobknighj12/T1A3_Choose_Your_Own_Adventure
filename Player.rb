@@ -111,7 +111,12 @@ class Player
     def is_door_locked()
         return @door_locked
     end
-
+    def player_name()
+        return @name
+    end
+    # def hp_missing() THIS STUFF AINT WORKING I NEED TO FIND HP FOR HEALING AMMOUNT AND AMMOUNT OF GOLD TO COST FIXX THIS!
+    #     @hp 
+    # end
     def print_self()
         puts "#{@name} has #{@hp} health."
         if @hp <= -1
