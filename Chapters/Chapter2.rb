@@ -13,28 +13,38 @@ class Chapter2
         #will leave intro's for the scene and surroundings of the player
         
         @options = []
-        if player.check_hp != 100
-            if player.gld != 0
-             @options.push("Go out and buy some things to patch your wounds")
-            end
-        end
+        
         @options.push("Go out to the north forrests ruins.")
         @options.push("Ask around if anyone saw the night terror and attempt to find where it went.")
         if player.mana != 0
         @options.push("Hold your hand out and attempt to recreate the power you felt recently")
         end
-        if player.time <= 2
+        if player.time <= 3 #swap fpr newgame+ PLACEHOLDER
         @options.push("'Damn why do I feel like I have been here before'")
         end
-        
+        if player.check_hp != 100
+            if player.gld != 0
+             @options.push("Go out and buy some things to patch your wounds")
+            end
+        end
+
         @consequences = []
         if player.hp 
         end
+        
+        @consequences.push("You dont want to waste any time here, pushing forwards to the north.")
+        @consequences.push("After spending some time walking around talking to others and speculating on rumours that you gathered one of the townspeople tells you that they saw a large shadow heading north around the time everyone was talking about, are #{@npc1} issue linked with the creature? The town notice board has a reward for any of those brave enough to investigate you can claim 1/4 beforehand to use to prepare for the investiagtion, currently being held by the inn. Before leaving you decided that you may as well take the investigation deposit before heading out. You decide its time to leave and find out")
+        if player.mana != 0
+        @consequences.push("you find a quiet place then, holding out your hand and reimagining the feeling you felt before. While doing this you see a glow from your chest, you dare not touch it, you feel as though you have gained more understanding of this power.")
+        end                                                                                                                         #{magic ammount} ^ This would be really cool to see a different color
+        if player.time <= 3 #swap fpr newgame+ PLACEHOLDER
+        @consequences.push("You ponder on this thought for a moment but, still feeling the urgency of going north you head that direction.")
+        end
+        if player.check_hp != 100
+            if player.gld != 0
         @consequences.push("You go out to try and find somwhere like a herbalists open to get some basic supplies to fix yourself up, fortunately.(1 gold per hp healed)")
-        @consequences.push("")
-        @consequences.push("")
-        @consequences.push("")
-        @consequences.push("")
+            end 
+        end
         
         
     end
@@ -73,16 +83,25 @@ class Chapter2
 
             case players_choice
                 when 0
-                    player.spend_gold(10)
-                    player.spend_time(1)
-                when 1
-                    player.spend_time(1)
-                when 2
                     
+                when 1
+                    puts "Collected 50 gold"
+                    gain_gold(50)
+                    spend_time(1)
+                when 2
+                    gain_mana(50)
                 when 3
-
+                    missing_hp = player.max_hp - player.hp
+                    if player.gld <= missing_hp
+                        player.spend_gold(missing_hp)
+                        player.heal_damage(missing_hp)
+                    else
+                        player.heal_damage(player.gld)
+                        player.spend_gold(player.gld)
+                    end
+                    
                 when 4
-                player.secret_found(10)
+                
             end
     end
     

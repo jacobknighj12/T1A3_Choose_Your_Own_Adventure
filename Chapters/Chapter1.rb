@@ -74,11 +74,11 @@ class Chapter1
             case players_choice
                 when 0
                     player.spend_gold(10)
-                    player.spend_time(1)
+                    
                     player.lock_door(false)
                     
                 when 1
-                    player.spend_time(1)
+                    
                     player.lock_door(true)
                    
                 when 2

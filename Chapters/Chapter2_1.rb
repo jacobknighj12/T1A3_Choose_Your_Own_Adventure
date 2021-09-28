@@ -21,7 +21,8 @@ class Chapter2_1
         @options.push("Attempt to light the bedside lamp and hold it towards the creature(50%)")
         if @current_mana != 0
         @options.push("You see a glimmer from inside the creature, grab it?(-1 mana)")
-        end
+        end # if you want more options you will need to apply the if to consequences too
+
         @consequences = []
         @consequences.push("You jump up and swing your taveling bag with all your weight, it slams into the #{@npc1}. Against the weight of the imapct the creature is flung into the wall, momentarily stunned but after that breif moment it lunches itself towards you and attacks you, burying its teeth into you, you wince in pain and tear it off of you, knowing that hitting it again would do nothing you run out with your things and sprint out of the inn.")
         @consequences.push("Slowly reaching into your bag you find your knife, clasping your hand around it jumping up and with a single motion drawing it from your bag and embedding it into the #{@npc1} you notice as you hold it against the thing, your knife has a dull glow, the #{@npc1} hisses in pain with #{@npc1_voice} and take off breaking out though the thatched roof. You leave the inn going outside")
@@ -83,17 +84,17 @@ class Chapter2_1
 
             case players_choice
                 when 0
-                      
+                      #if stamina is less than required ammount = die
                     player.spend_stamina(30)
                     player.take_damage(40)
                     puts "-40 Health"
                     puts "-30 Stamina"
                 when 1
-                    
+                    #if stamina is less than required ammount = die
                     player.spend_stamina(30)
                     puts "-30 Stamina"
                 when 2
-                    player.spend_stamina(10)
+                    player.spend_stamina(10)#if stamina is less than required ammount = die
                     puts "-10 Stamina"
                 when 3
                     roll = rand(2)
@@ -104,9 +105,10 @@ class Chapter2_1
                     player.take_damage(100)
                 end
                 when 4
-                    
+                    puts "+45 Mana"
+                    puts "-25 Stamina"
                     player.gain_mana(45)
-                    player.spend_stamina(25)
+                    player.spend_stamina(25)#if stamina is less than required ammount = die
                 end
                 player.spend_time(1)
     end

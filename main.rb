@@ -10,7 +10,7 @@ player = Player.new
 chapter_map[0] = Chapter1.new(player)
 chapter_map[1] = Chapter2.new(player)
 chapter_map[2] = Chapter3.new(player)
-chapter_map[3] = Chapter2_1.new(player)
+chapter_map[10] = Chapter2_1.new(player)
 index = 0
 
 
@@ -31,10 +31,13 @@ while true
     door_locked = player.is_door_locked
     time = player.check_time
     player.print_self()
+    if index == 10
+        index = 1 #exit side loop
+    end
     if index == 0  
         
         if door_locked == false
-        index = 3
+        index = 10
         else
         index += 1 
         end
@@ -42,26 +45,29 @@ while true
         
         puts "Your not in chapter 1" # REMOVE LATER FOR DEBUGGING PURPOSES
         
-    index += 1
+    index += 1 # location of this boy is causing issues
     end
     if player.hp == 0
-        puts "YOU DIED.. GAME OVER" 
-        puts "Retry? Y/N"
-        input = gets
-        if input.include? "Y"
-            "ANYWAY!"
-            player.heal_damage(100)
-            index = 0
-        end
+        #continue() will need to call this
+        puts "game over not completed yet. please try again later"
+        gets
+        break
     else
         puts "Press Enter to start the next chapter..."
         gets
     end
-end
-def continue()
-    puts "continue?...  Y/N"
-    input = gets
-    if input.include? "Y"
-        #put some way to restart chapter here please... pass it on to the next guy, thanks..
+    def continue(player)
+    
+        puts "YOU DIED.. GAME OVER" 
+        puts "Retry? Y/N"
+        input = gets
+        if input.include? "Y" 
+            "ANYWAY!"
+            player.heal_damage(100)
+            index == 0
+        end
+        
     end
+    
 end
+

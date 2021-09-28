@@ -21,9 +21,9 @@ class Chapter3
         
         @options = []
         @options.push("fight one at a time with your knife")
-        @options.push("Tear some their light out of their bodys(10 mana required)")
-        @options.push("Tear 10's of lights out of their bodys(50 mana required)") 
-        @options.push("Tear 100's of lights out of their bodys(320 mana required)")
+        @options.push("Tear some their light out of their bodys(10 mana required)") #gain 100
+        @options.push("Tear 10's of lights out of their bodys(50 mana required)") # gain 250
+        @options.push("Tear 100's of lights out of their bodys(320 mana required)") #gain 700
         @options.push("Tear 1000's of lights out of their bodys(1000 mana required)")
         
         @consequences = []

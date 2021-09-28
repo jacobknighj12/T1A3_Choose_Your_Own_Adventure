@@ -2,7 +2,8 @@
 # require_relative "blacklist"
 class Player
     attr_reader :npc1
-    attr_reader :name    
+    attr_reader :name   
+    attr_reader :max_hp 
     attr_reader :hp 
     attr_reader :gld    
     attr_reader :stam 
@@ -34,6 +35,7 @@ class Player
         if @name.include? "Bob" #Wanted to add some Cheat codes
             puts "secret inputed, this is no longer a normal run."
             @hp = 100
+            @max_hp = 100
             @gld = 20000
             @stam = 100
             @mana = 100
@@ -42,6 +44,7 @@ class Player
         elsif @name.include? "Jacob" 
             puts "secret inputed, this is no longer a normal run."
             @hp = 100
+            @max_hp = 100
             @gld = 20000
             @stam = 1000
             @mana = 100
@@ -50,12 +53,14 @@ class Player
         elsif @name.include? "Samos" 
                 puts "secret inputed, this is no longer a normal run."
                 @hp = 100
+                @max_hp = 100
                 @gld = 20000
                 @stam = 1000
                 @mana = 10000
                 @time = 200
                 else
                 @hp = 100
+                @max_hp = 100
                 @gld = 10
                 @stam = 100
                 @mana = 0
