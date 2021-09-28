@@ -4,9 +4,10 @@ class Chapter1
     attr_reader :options # The options, the player chooses!
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
+    attr_reader :name
     
-    
-    def initialize()
+    def initialize(player)
+        
         # name = player_name() SUDDENLY PLAYER NAME STOPS WORKING I DONT KNOW WHY IT WAS LITTERALLY JUST WORKING AND BEFORE THEN IT WASENT WORKING BUT NOW ITS NOT WORKING AGAIN AND ITS AN ISSUE
         # new_game_plus_string = " *#___=  -%%&* %% ##@1 //2|..\."
         @npc1 = ("Bob the barkeep")

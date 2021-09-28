@@ -4,13 +4,13 @@ require_relative "Chapters/Chapter2_1"
 require_relative "Chapters/Chapter3"
 require_relative "Player" 
 require 'rainbow'
-require 'tty-link'
+require 'tty-link' #intention was to allow the user to click the link in terminal, didnt pan out that way but kept it because it looks nice
 chapter_map = []
 player = Player.new
-chapter_map[0] = Chapter1.new
+chapter_map[0] = Chapter1.new(player)
 chapter_map[1] = Chapter2.new(player)
-chapter_map[2] = Chapter3.new
-chapter_map[3] = Chapter2_1.new
+chapter_map[2] = Chapter3.new(player)
+chapter_map[3] = Chapter2_1.new(player)
 index = 0
 
 
