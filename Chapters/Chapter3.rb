@@ -92,12 +92,14 @@ class Chapter3
                     player.start_new_game_plus(true)
                 when 3
                     puts Rainbow("after some time they overwhelm you").red
-                    puts Rainbow("gain +700 mana").blue
-                    player.gain_mana(700)
+                    puts Rainbow("gain +620 mana").blue
+                    player.gain_mana(620)
                     player.take_damage(10)
                     player.start_new_game_plus(true)
                 when 4
                     player.start_new_game_plus(true)
+                    puts "YOU HAVE FINISHED THE CURRENT ALPHA"
+                    gets
                    # player.ending(true) NEED TO SETUP THIS FOR A ENDING
             end
     end

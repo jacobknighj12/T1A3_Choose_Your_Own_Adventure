@@ -1,0 +1,167 @@
+commit e6ec9703e69a176219fef75b352084efd417ef16
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Wed Sep 29 12:14:24 2021 +1000
+
+    working on the loop got it to work everything carries over perfectly, just need to add polish, chapter 3 and variables on newgameplus
+
+commit 82c471bd56b3ad3e49c5b4ab01385083ce4ba6f8
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Wed Sep 29 00:06:12 2021 +1000
+
+    cleaning up the stuff, finally getting into the last chaptercontinuosly cleaning bugs, still having an issue with resetting the loop right now, may need assistance.
+
+commit a98900e66520d71449417aef8fbc5740e0805fdc
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Tue Sep 28 11:01:20 2021 +1000
+
+    I am a fool, player is now fixed...
+
+commit 14a1b4964db878229f51f8f50896c369130cc757
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Tue Sep 28 00:06:09 2021 +1000
+
+    name variable broke again for no reason please senior dev sir help me
+
+commit a9009bbf10bab434b333daf010c933b3f7643167
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Mon Sep 27 16:48:59 2021 +1000
+
+    passing the player to the initialize on the chapters makes all my wildest dreams come true
+
+commit cbf86cba7b70e6882fe2e5bdc4e15f9bd71cad5b
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Mon Sep 27 15:42:58 2021 +1000
+
+    errors and breaking stuff, attempting to fix
+
+commit 91e4d4cd9524ecebcae5a3d91726810dd2bc2d26
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Mon Sep 27 13:25:01 2021 +1000
+
+    a bit all over the place adding things in all chapters got a few gems working and bunches of more text
+
+commit 6c4eee5701ef5a11d2faf50497f57b9f1173c00a
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Sun Sep 26 22:17:22 2021 +1000
+
+    late night commit, worked on chapter 2 and 3 still cant get doorlocks working
+
+commit c9d204c1a058af1fd768cc8a8af32c14dec261bc
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Sun Sep 26 11:49:40 2021 +1000
+
+    finishing off branch 1, almost done with options and concequences, found somthing wrong with the trueflase on lockeddoor
+
+commit ed04ed2d2364b65fed978ccc538d3fb1f67844c7
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Sun Sep 26 00:04:33 2021 +1000
+
+    getting the first dangerous encounter filled out done some waffling and got it working
+
+commit 9daced4cff13c83cceb2d7dacc2ed9be487dcf7b
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Sat Sep 25 23:01:58 2021 +1000
+
+    added chap2.1 filling in details, able to swap around scenes now
+
+commit 85ecc40063644cff497a1c23813064cfcd8715cb
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Sat Sep 25 11:01:42 2021 +1000
+
+    chapter iteration works, newgameplus needs work, all the chapter1 options are working
+
+commit 781eee488070ce7e2d7ac2fcfac4b2745d22138f
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Sat Sep 25 09:37:54 2021 +1000
+
+    working on a chapter system
+
+commit 00a9e45403f0771eb39aee12aee81179c54618d9
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Fri Sep 24 23:20:15 2021 +1000
+
+    late night commit probably put in some more player actions and input those into the story chapter 1
+
+commit a2c494914940ecd79a1b07e0544476fa63788220
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Fri Sep 24 15:52:47 2021 +1000
+
+    adding in methods to adjust player values for events
+
+commit 84542d356979e91eef3b5e78bea9a27ed2983c12
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Fri Sep 24 12:48:45 2021 +1000
+
+    got caught on the idea of using a blacklist array to reject undesireable names
+
+commit 8c4524cc7efbed9684fc7b5f6db59f10c5b5b818
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Fri Sep 24 11:58:57 2021 +1000
+
+    the gems im trying to use dont wnat to work.... will postpone
+
+commit b20c92c2230aa67db3852f090cf3d116affec630
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Thu Sep 23 19:36:20 2021 +1000
+
+    story addition and attempmting to work on sounds for game
+
+commit f225e49eeb6780c5352830f8ee140a65c2374e4d
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Thu Sep 23 15:51:12 2021 +1000
+
+    I AM A GOD, really liking the setup so far getting floods of ideas, set up the basic floor and will continue creating the first chapter now!
+
+commit 5a4873c56fc4a98848eaa679e995eb6ad4f62364
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Thu Sep 23 15:39:03 2021 +1000
+
+    recreated and translated the project we were working on in class with large alterations and will remap a few things but this will serve as a good pizza base
+
+commit 139561bd4e0015ac14767ba9cbf6f5a8c1029bb6
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Thu Sep 23 12:05:53 2021 +1000
+
+    completed trello for project
+
+commit eb8c98053cf1374998e2c5868e382be83e9922d1
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Thu Sep 23 11:12:28 2021 +1000
+
+    started diagram for control flow
+
+commit 739ac0febf723ba7367a7eaa90e2fe337107c01a
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Thu Sep 23 10:50:14 2021 +1000
+
+    bad commit message, I have continued to fill out further readme requirements
+
+commit 17561ea438fde625a9e4b31858edc970eb276f21
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Thu Sep 23 10:47:52 2021 +1000
+
+    I hope i can complete my project...
+
+commit 9bf5f37f35870658ecbb0db6a6696a9faa607a80
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Thu Sep 23 10:17:01 2021 +1000
+
+    late start today lets get this ball rolling
+
+commit 173b8c72766e8e5d5b1c9707fb6de9963c301b6f
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Wed Sep 22 23:41:27 2021 +1000
+
+    continued scripting into the pm's
+
+commit 965aedbb097b65a92b2d79757fa0d38bdaa478f5
+Author: Jacob K <jacobknighj@gmail.com>
+Date:   Wed Sep 22 20:44:48 2021 +1000
+
+    scripting the dev plan
+
+commit 00f43f50a751d8f72014a43ccf292290018c22f3
+Author: Jacob Knight <78334099+jacobknighj12@users.noreply.github.com>
+Date:   Wed Sep 22 17:26:09 2021 +1000
+
+    Initial commit

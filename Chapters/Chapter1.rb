@@ -11,9 +11,9 @@ class Chapter1
         # new_game_plus = " *#___=  -%%&* %% ##@1 //2|..\."
         
         if player.new_game_plus == true #WHY AINT THIS WORKIN?
-            code = " I need to fuel up to continue coding"
+            @code = " I need to fuel up to continue coding"
         else
-            code = " #___=  -%%&* %% ##@1 //2|..\."
+            @code = " #___=  -%%&* %% ##@1 //2|..\."
         end
         @npc1 = ("Bob the barkeep")
         @npc1_voice = ("In his muffled tone")
@@ -26,7 +26,7 @@ class Chapter1
         @options.push("Ask about the night terrors")
         @options.push("Get up, thank #{@npc1} for the drinks but you have to go")
         @options.push("Try to remember what you were doing before this")
-        @options.push("Coffee please" + code)#+ new_game_plus it didnt really work and i dont want to make it too obvious█░░█░█░█
+        @options.push("Coffee please" + @code)#+ new_game_plus it didnt really work and i dont want to make it too obvious█░░█░█░█
         
         @consequences = []
         @consequences.push("You spend some more time drinking and lose time after a while #{@npc1} speaks up 'I dont think you want another for tonight, here; take your room keys and go to sleep for tonight.' He says somthing after you get up but you cant understand it and continue up to your room.")
@@ -65,6 +65,7 @@ class Chapter1
     
         # All chapters will run perform method at some point possibly multiple times!
     def perform(player)
+        
         # if player.check_time <= 2 WHY ISNT THIS WORKING
         #     p new_game_plus_
         #     new_game_plus = " I will need it for this game"

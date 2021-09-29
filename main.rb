@@ -6,6 +6,13 @@ require_relative "Player"
 require 'rainbow'
 require 'tty-link' #intention was to allow the user to click the link in terminal, didnt pan out that way but kept it because it looks nice
 chapter_map = []
+puts "This is a choose your own adventure horror game. Please take the time to set the terminal in full screen"
+    puts "This game is best played with background music and headphones to set the mood. Please follow the link below"
+    puts puts TTY::Link.link_to("KEYGEN CHURCH - ░█░█░░█░█░█░", "https://www.youtube.com/watch?v=27LZr9dDWRs")
+    puts "Keep in mind the tracks do get a bit intense so adjust the volume for your prefrence."
+    puts "The interactions in this game will be simple multiple choice numbers from a list, the list will show you each option, only when it asks for you name will you have to type a full string. For best use please only input one of the options provided."
+    puts "Press Enter to start..."
+    gets
 player = Player.new
 chapter_map[0] = Chapter1.new(player)
 chapter_map[1] = Chapter2.new(player)
@@ -16,15 +23,11 @@ index = 0
 #MAJOR ISSUE MY DUDE, CANT USE IF's FOR THE CASE OPTIONS WILL NEED TO FIND A FIX
 
 
-puts Rainbow("this is red").red + " and " + Rainbow("this on yellow bg").bg(:yellow) + " and " + Rainbow("even bright underlined!").underline.bright
-puts "This is a choose your own adventure horror game. Please take the time to set the terminal in full screen"
-puts "This game is best played with background music and headphones to set the mood. Please follow the link below"
-puts puts TTY::Link.link_to("KEYGEN CHURCH - ░█░█░░█░█░█░", "https://www.youtube.com/watch?v=27LZr9dDWRs")
-puts "Keep in mind the tracks do get a bit intense so adjust the volume for your prefrence."
-puts "The interactions in this game will be simple multiple choice numbers from a list, the list will show you each option, only when it asks for you name will you have to type a full string. For best use please only input one of the options provided."
+#puts Rainbow("this is red").red + " and " + Rainbow("this on yellow bg").bg(:yellow) + " and " + Rainbow("even bright underlined!").underline.bright
 
 # @chapters.map{|chapter| Chapter.new()} I dont know how to use this I know how to increment and use arrays so i will ignore this for now
 while true
+    
     system("clear")
     player.print_self()
     chapter_map[index].perform(player)
