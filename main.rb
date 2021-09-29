@@ -13,7 +13,7 @@ chapter_map[2] = Chapter3.new(player)
 chapter_map[10] = Chapter2_1.new(player)
 index = 0
 
-
+#MAJOR ISSUE MY DUDE, CANT USE IF's FOR THE CASE OPTIONS WILL NEED TO FIND A FIX
 
 
 puts Rainbow("this is red").red + " and " + Rainbow("this on yellow bg").bg(:yellow) + " and " + Rainbow("even bright underlined!").underline.bright
@@ -41,11 +41,15 @@ while true
         else
         index += 1 
         end
+    elsif index == 2
+        player.heal_damage(5)
+        index = 0
+
     else
         
         puts "Your not in chapter 1" # REMOVE LATER FOR DEBUGGING PURPOSES
         
-    index += 1 # location of this boy is causing issues
+    index += 1 # location of this boy is causing issues CANT LOOP BACK WITHOUT MAKING ISSUES FROM 2.1 HELP ME. HELP ME ITS #EDIT CURRENTly WORKING JUST LEAVE THIS ALONE PRETTY SURE I GOT IT GOOD
     end
     if player.hp == 0
         #continue() will need to call this

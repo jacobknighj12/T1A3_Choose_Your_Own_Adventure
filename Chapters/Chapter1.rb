@@ -1,15 +1,20 @@
 class Chapter1
-    # All chapters will have this data.
     attr_reader :npc1 # Name of the charecter your talking too
     attr_reader :options # The options, the player chooses!
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
-    attr_reader :name
+    attr_reader :name #you?
     
     def initialize(player)
         
         # name = player_name() SUDDENLY PLAYER NAME STOPS WORKING I DONT KNOW WHY IT WAS LITTERALLY JUST WORKING AND BEFORE THEN IT WASENT WORKING BUT NOW ITS NOT WORKING AGAIN AND ITS AN ISSUE
-        # new_game_plus_string = " *#___=  -%%&* %% ##@1 //2|..\."
+        # new_game_plus = " *#___=  -%%&* %% ##@1 //2|..\."
+        
+        if player.new_game_plus == true #WHY AINT THIS WORKIN?
+            code = " I need to fuel up to continue coding"
+        else
+            code = " #___=  -%%&* %% ##@1 //2|..\."
+        end
         @npc1 = ("Bob the barkeep")
         @npc1_voice = ("In his muffled tone")
         @chapter_intro = ("Unknown:'Hey, you alright #{player.name}?'Your vision clears as you look around the room there is a man you recognize in front of you across the bar counter, you feel as though he has been serving you drinks for the past hour what was his name again? E!#2_^^& or somthing his the barkeeper so I will just call him that, #{@npc1}. Around you there are patrons thoughout the bar, you can't recognize any others, its loud and crowded it seems to be a buisy time. 'Well, #{@npc1} #{@npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area, you may want to finish your drink and leave soon.'") 
@@ -21,7 +26,7 @@ class Chapter1
         @options.push("Ask about the night terrors")
         @options.push("Get up, thank #{@npc1} for the drinks but you have to go")
         @options.push("Try to remember what you were doing before this")
-        @options.push("Coffee please," )#+ new_game_plus_string it didnt really work and i dont want to make it too obvious█░░█░█░█
+        @options.push("Coffee please" + code)#+ new_game_plus it didnt really work and i dont want to make it too obvious█░░█░█░█
         
         @consequences = []
         @consequences.push("You spend some more time drinking and lose time after a while #{@npc1} speaks up 'I dont think you want another for tonight, here; take your room keys and go to sleep for tonight.' He says somthing after you get up but you cant understand it and continue up to your room.")
@@ -34,7 +39,7 @@ class Chapter1
     end
     
     def print_intro(player_name)
-
+        
             puts "Chapter 1"
             # puts "#{player_name} sees a #{@name}." may use this at some point?
             # puts @art same?
@@ -50,6 +55,7 @@ class Chapter1
         end
 
     def get_player_choice()
+        
             print "Enter your choice: "
             players_choice = gets.to_i - 1 # 0->3
             puts @consequences[players_choice]
@@ -60,12 +66,13 @@ class Chapter1
         # All chapters will run perform method at some point possibly multiple times!
     def perform(player)
         # if player.check_time <= 2 WHY ISNT THIS WORKING
-        #     p new_game_plus_string
-        #     new_game_plus_string = " I will need it for this game"
+        #     p new_game_plus_
+        #     new_game_plus = " I will need it for this game"
         # else
-        #     p new_game_plus_string
-        #     new_game_plus_string = "*#___=  -%%&* %%##@1////...."
+        #     p new_game_plus
+        #     new_game_plus = "*#___=  -%%&* %%##@1////...."
         # end
+        
             print_intro(player.name)
             print_options
             players_choice = get_player_choice

@@ -1,5 +1,4 @@
 class Chapter2
-    # All chapters will have this data.
     attr_reader :npc1 # Name of the charecter your talking too
     attr_reader :options # The options, the player chooses!█░░█░█░█
     attr_reader :consequences # The consequence of the players choice of options.
@@ -86,10 +85,11 @@ class Chapter2
                     
                 when 1
                     puts "Collected 50 gold"
-                    gain_gold(50)
-                    spend_time(1)
+                    player.gain_gold(50)
+                    player.spend_time(1)
+                    
                 when 2
-                    gain_mana(50)
+                    player.gain_mana(50)
                 when 3
                     missing_hp = player.max_hp - player.hp
                     if player.gld <= missing_hp

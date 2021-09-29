@@ -1,6 +1,5 @@
 class Chapter3
-    # All chapters will have this data.
-    attr_reader :npc1 # The name of the chapter, duh!
+    attr_reader :npc1 # Name of the charecter your talking too
     attr_reader :options # The options, the player chooses!
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
@@ -15,17 +14,24 @@ class Chapter3
              ▐        ▐        ▐         ▐       ▐ ▐             ▐     ")
         @npc1_voice = ("Can only be described as
             A8D9__█░░█░█░█_D1C2H█░█░█9I1D█░░█░░9J9H3E0")
-        @chapter_intro = ("") 
+        @chapter_intro = ("After entering the forrest you start hearing sounds all around you, but press on. It starts getting colder when you get closer to the ruins.. you clear the forrest and reach an open cleaning filled with dead flowers, you can see the man off in the distance, he waves urgently and shouts. but it was too late. after turning around all you see along the entire edgeline of the forrest cold, almost dead eyes thousands of them as far left and right as you can see, seconds later your surrounded by night terrors") 
         #the sentence doesnt like to be shown over multiple lines so it will be one line
         #will leave intro's for the scene and surroundings of the player
         
         @options = []
         @options.push("fight one at a time with your knife")
+        if player.check_mana <= 10
         @options.push("Tear some their light out of their bodys(10 mana required)") #gain 100
+        end
+        if player.check_mana <= 50
         @options.push("Tear 10's of lights out of their bodys(50 mana required)") # gain 250
+        end
+        if player.check_mana <= 320
         @options.push("Tear 100's of lights out of their bodys(320 mana required)") #gain 700
+        end
+        if player.check_mana <= 1000
         @options.push("Tear 1000's of lights out of their bodys(1000 mana required)")
-        
+        end
         @consequences = []
         @consequences.push("")
         @consequences.push("")
@@ -68,16 +74,31 @@ class Chapter3
 
             case players_choice
                 when 0
-                    player.spend_gold(10)
-                    player.spend_time(1)
-                when 1
-                    player.spend_time(1)
-                when 2
                     
+                    puts Rainbow("after some time they overwhelm you").red
+                    player.start_new_game_plus(true)
+                    player.take_damage(10)
+                when 1
+                    puts Rainbow("after some time they overwhelm you").red
+                    puts Rainbow("gain +100 mana").blue
+                    player.gain_mana(100)
+                    player.take_damage(10)
+                    player.start_new_game_plus(true)
+                when 2
+                    puts Rainbow("after some time they overwhelm you").red
+                    puts Rainbow("gain +250 mana").blue
+                    player.gain_mana(250)
+                    player.take_damage(10)
+                    player.start_new_game_plus(true)
                 when 3
-
+                    puts Rainbow("after some time they overwhelm you").red
+                    puts Rainbow("gain +700 mana").blue
+                    player.gain_mana(700)
+                    player.take_damage(10)
+                    player.start_new_game_plus(true)
                 when 4
-                player.secret_found(10)
+                    player.start_new_game_plus(true)
+                   # player.ending(true) NEED TO SETUP THIS FOR A ENDING
             end
     end
     

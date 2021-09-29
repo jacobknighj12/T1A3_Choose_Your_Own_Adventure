@@ -10,6 +10,7 @@ class Player
     attr_reader :mana
     attr_reader :time
     attr_reader :door_locked
+    attr_reader :new_game_plus
     
     # attr_reader :blacklist 
     #Got stuck on blacklist going to leave it for now... not a essential feature
@@ -40,7 +41,7 @@ class Player
             @stam = 100
             @mana = 100
             @time = 0
-            
+            @new_game_plus = false
         elsif @name.include? "Jacob" 
             puts "secret inputed, this is no longer a normal run."
             @hp = 100
@@ -49,7 +50,7 @@ class Player
             @stam = 1000
             @mana = 100
             @time = 0
-            
+            @new_game_plus = false
         elsif @name.include? "Samos" 
                 puts "secret inputed, this is no longer a normal run."
                 @hp = 100
@@ -58,13 +59,15 @@ class Player
                 @stam = 1000
                 @mana = 10000
                 @time = 200
+                @new_game_plus = false
                 else
-                @hp = 100
+                @hp = 95
                 @max_hp = 100
                 @gld = 10
                 @stam = 100
                 @mana = 0
                 @time = 0
+                @new_game_plus = false
                 end
         puts "Unknown: So, your name is #{@name}"
         puts "Press the Enter key to continue..."
@@ -77,7 +80,7 @@ class Player
         @hp -= damage
     end
     def heal_damage(healing)
-        @hp += damage
+        @hp += healing
     end
     def check_hp()
         return @hp
@@ -119,22 +122,25 @@ class Player
     def player_name()
         return @name
     end
-    # def hp_missing() THIS STUFF AINT WORKING I NEED TO FIND HP FOR HEALING AMMOUNT AND AMMOUNT OF GOLD TO COST FIXX THIS!
+    def start_new_game_plus(state)
+        @new_game_plus = state
+    end
+    # def hp_missing() THIS STUFF AINT WORKING I NEED TO FIND HP FOR HEALING AMMOUNT AND AMMOUNT OF GOLD TO COST FIXX THIS! GOING OVER MAX HP NOW TOO YAY!
     #     @hp 
-    # end
+    # end I fixed that now right? not sure....
     def print_self()
-        puts "#{@name} has #{@hp} health."
+        puts Rainbow("#{@name} has #{@hp} health.").green
         if @hp <= -1
-        puts "hp is lower than zero I hope your dead right now"
+        puts "hp is lower than zero I hope you should be dead right now"
         end
-        puts "#{@name} has #{@stam} stamina."
+        puts Rainbow("#{@name} has #{@stam} stamina.").yellow
         if @gld <= 0
-            puts "#{@name} has no gold."
+            puts Rainbow("#{@name} has no gold.").red
         else
-        puts "#{@name} has #{@gld} gold."
+        puts Rainbow("#{@name} has #{@gld} gold.").gold
         end
         if @mana >= 1
-            puts "#{@name} has #{@mana} mana"
+            puts Rainbow("#{@name} has #{@mana} mana").blue
         end
     end
 end

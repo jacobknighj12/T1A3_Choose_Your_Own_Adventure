@@ -1,5 +1,4 @@
 class Chapter2_1
-    # All chapters will have this data.
     attr_reader :npc1 # Name of the charecter your talking too
     attr_reader :options # The options, the player chooses!
     attr_reader :consequences # The consequence of the players choice of options.
@@ -13,14 +12,13 @@ class Chapter2_1
         #the sentence doesnt like to be shown over multiple lines so it will be one line
         #will leave intro's for the scene and surroundings of the player
         
-        
         @options = []
         @options.push("Jump up and attack the being")
         @options.push("Slowly slide your hand towards your bag and reach for your knife")
         @options.push("Push the creature to the side and run away")
         @options.push("Attempt to light the bedside lamp and hold it towards the creature(50%)")
-        if @current_mana != 0
-        @options.push("You see a glimmer from inside the creature, grab it?(-1 mana)")
+        if player.check_mana != 0
+        @options.push("You see a glimmer from inside the creature, grab it?(-1 mana)") else
         end # if you want more options you will need to apply the if to consequences too
 
         @consequences = []
@@ -28,8 +26,9 @@ class Chapter2_1
         @consequences.push("Slowly reaching into your bag you find your knife, clasping your hand around it jumping up and with a single motion drawing it from your bag and embedding it into the #{@npc1} you notice as you hold it against the thing, your knife has a dull glow, the #{@npc1} hisses in pain with #{@npc1_voice} and take off breaking out though the thatched roof. You leave the inn going outside")
         @consequences.push("You grab your bag while jumping up and pushing your weight forwards, colliding with #{@npc1} slamming it against the wall, for a breif moment it is stunned and you are able to sprint out of the inn")
         @consequences.push("You roll the dice.")
+        if player.check_mana != 0
         @consequences.push("You reach, but not with your hand, but somthing else you feel as though you can pull it away reaching with your concience it feels like pushing through mud, till you grab onto the light. You feel stronger, the weight of the mud, more like soup now, you pull back to see the #{@npc1} colapse on itself with incredible force snaps and cracks from all of its bones as it crumples into a lump of remains. You leave the specticle, having done enough for one night and leave the inn going outside")
-        
+        end
         
     end
     # Well, #{player.name} #{@npc1} #{npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area,you may want to finish your drink and leave soon.
@@ -63,8 +62,8 @@ class Chapter2_1
             for option in @options
                 puts "#{options_index + 1}. #{option}"
                 options_index += 1
+            end
     end
-        end
 
     def get_player_choice()
             print "Enter your choice: "
@@ -105,13 +104,18 @@ class Chapter2_1
                     player.take_damage(100)
                 end
                 when 4
+                    if @current_mana != 0
                     puts "+45 Mana"
                     puts "-25 Stamina"
                     player.gain_mana(45)
                     player.spend_stamina(25)#if stamina is less than required ammount = die
+                    else
+                        puts "You dont have the requirements please pick another option"
+                        get_player_choice() # DONT WORRY THIS ISNT NEEDED ANYMORE I JUST FIXED THE IF STATEMENT!
+                        #PLAY IS STILL ABLE TO INPUT THIS OPTION! IT BREAKS THE GAME
                 end
                 player.spend_time(1)
     end
     
 
-end
+end end #I dont know why this second end wanted to be here will probably need to fix...
