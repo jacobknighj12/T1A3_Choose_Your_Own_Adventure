@@ -7,16 +7,9 @@ class Chapter1
     
     def initialize(player)
         
-        # name = player_name() SUDDENLY PLAYER NAME STOPS WORKING I DONT KNOW WHY IT WAS LITTERALLY JUST WORKING AND BEFORE THEN IT WASENT WORKING BUT NOW it's NOT WORKING AGAIN AND it's AN ISSUE
-        # new_game_plus = " *#___=  -%%&* %% ##@1 //2|..\."
-        
-        
         @npc1 = ("Bob the barkeep")
         @npc1_voice = ("In his muffled tone")
         @chapter_intro = ("Unknown:'Hey, you alright #{player.name}?'Your vision clears as you look around the room there is a man you recognize in front of you across the bar counter, you feel as though he has been serving you drinks for the past hour what was his name again? E!#2_^^& or somthing his the barkeeper so I will just call him that, #{@npc1}. Around you there are patrons thoughout the bar, you can't recognize any others, it's loud and crowded it seems to be a busy time. 'Well, #{@npc1} #{@npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area, you may want to finish up your drinking and leave soon.'") 
-        #the sentence doesnt like to be shown over multiple lines so it will be one line
-        #will leave intro's for the scene and surroundings of the player
-        
         @options = []
         @options.push("Ask for a drink")
         @options.push("Ask about the night terrors")
@@ -30,15 +23,10 @@ class Chapter1
         @consequences.push("'Wait, your room key you already paid for it 'member?' he hands you your key and looks strangely at you and before you leave his sight he says 'Be sure to lock your door!', you walk off upstairs to your room")
         @consequences.push("Haze pushes into your mind, it hurts to think you feel like you paid for your drinks and room but then slowly started feeling as if somthing was starting to.. sit on your shoulder? You ask for your room key from #{@npc1} and head up the stairs to your room. #{@npc1} says somthing after you get up but you cant understand it and continue up to your room.")
         @consequences.push("Haze pushes into your mind, it hurts to think the words you expected to come from your mouth dont feel like your own. Something feels different. 'You aight there buddy? #{@npc1} says #{@npc1_voice} *You look up from holding your head to see concern in the old mans face* 'ere, yer key go to bed and take rest for the night, remember to lock your door.' ")
-        
-        
     end
-    
         def print_intro(player_name)
-        
-            puts "Chapter 1"
-            
-            puts @chapter_intro
+         puts "Chapter 1"
+         puts @chapter_intro
         end
 
         def print_options()
@@ -55,10 +43,8 @@ class Chapter1
             
             puts @consequences[players_choice]
             return players_choice
-            
     end
-    
-       
+
     def perform(player)
         
         if player.check_hp != 100
@@ -67,27 +53,19 @@ class Chapter1
             print_intro(player.name)
             print_options
             players_choice = get_player_choice(player)
-            
-
             case players_choice
                 when 0
                     player.spend_gold(10)
-                    
                     player.lock_door(false)
-                    
                 when 1
-                    
                     player.lock_door(true)
-                   
                 when 2
                     player.lock_door(true)
-                   
                 when 3
                     player.lock_door(false)
                 when 4
                 player.secret_found(10)
                 player.lock_door(true)
-                
             end
             
     end

@@ -42,7 +42,6 @@ while true
         if player.check_survived_ch3 == true
             index = 8
         else
-        player.heal_damage(5)
         index = 0
         end
     elsif index == 10
@@ -51,13 +50,12 @@ while true
         if player.check_survived_ch3 == false
             break
         else
-        player.heal_damage(5)
         index = 0
         end
     else
     index += 1 
     end
-    if player.check_hp == 0
+    if player.check_hp <= 0
         puts "YOU DIED.. GAME OVER" 
         puts "Retry? Y/N"
         input = gets

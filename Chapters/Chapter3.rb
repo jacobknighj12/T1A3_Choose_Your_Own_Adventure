@@ -7,29 +7,14 @@ class Chapter3
         @npc1 = ("Night horrors")
         @npc1_voice = ("Can only be described as A8D9__█░░█░█░█_D1C2H█░█░█9I1D█░░█░░9J9H3E0")
         @chapter_intro = ("After entering the forest you start hearing sounds all around you, #{npc1} the sounds #{@npc1_voice} but you press on. It starts getting colder when you get closer to the ruins.. you clear the forest and reach an open cleaning filled with dead flowers, you can see the man off in the distance, he waves urgently and shouts. but it was too late. after turning around all you see along the entire edgeline of the forest cold, almost dead eyes thousands of them as far left and right as you can see, seconds later your surrounded by night terrors") 
-        #the sentence doesnt like to be shown over multiple lines so it will be one line
-        #will leave intro's for the scene and surroundings of the player
-        
+       
         @options = []
         @options.push("fight one at a time with your knife")
-        #if player.check_mana >= 10
-        @options.push("Tear some light out of the entities(10 mana required)") #gain 100
-        #end
-        #if player.check_mana >= 50
-        @options.push("Tear 10's of lights out of the entities(50 mana required)") # gain 250
-        #end
-        #if player.check_mana >= 320
-        @options.push("Tear 100's of lights out of the entities(320 mana required)") #gain 620
-        #end
-        #if player.check_mana >= 1000
+        @options.push("Tear some light out of the entities(10 mana required)")
+        @options.push("Tear 10's of lights out of the entities(50 mana required)")
+        @options.push("Tear 100's of lights out of the entities(320 mana required)") 
         @options.push("Tear 1000's of lights out of the entities(1000 mana required)")
-        #end
-
-        conseq1 = []
-
-
-
-
+        
         @consequences = []
         @consequences.push("You brandish the knife, it's now glowing a violent blue and attempt to fight your way out, no matter how many of them you kill. More endlessly follow, until you reach the exhaustion point and not being able to see anymore then fall down and slowly feel yourself being devoured.")
         @consequences.push("A dull blue energy eminating from yourself reaches outwards and begins raviging the entities around you. The energy quickly dulls and fades, you hear echoing words. 'You are not strong enough yet.' as you are overrun you fall down and slowly feel yourself being devoured.")
@@ -39,12 +24,8 @@ class Chapter3
         
         
     end
-    # Well, #{player.name} #{@npc1} #{npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area,you may want to finish your drink and leave soon.
-    def print_intro(player_name)
-
+     def print_intro(player_name)
             puts "Chapter 3"
-            # puts "#{player_name} sees a #{@name}." may use this at some point?
-            # puts @art same?
             puts @chapter_intro
     end
 
@@ -59,7 +40,7 @@ class Chapter3
     def get_player_choice(player)
             print "Enter your choice: "
             players_choice = gets.to_i - 1 # 0->3
-            while players_choice == 1 #-1 here from each ajusted number
+            while players_choice == 1 #-1 here from each ajusted number 
                 if player.check_mana <= 9
                 puts "you dont have the requirements for this (10 Mana)"
                 puts "Enter your choice: "
@@ -97,19 +78,15 @@ class Chapter3
              end
             puts @consequences[players_choice]
             return players_choice
-            
     end
     
-        # All chapters will run perform method at some point possibly multiple times!
     def perform(player)
             print_intro(player.name)
             print_options
             players_choice = get_player_choice(player)
             
-
             case players_choice
                 when 0
-                    
                     puts Rainbow("After some time they overwhelm you. Within no time there is not a trace left of what you were. GAME OVER").red
                     player.gain_mana(5)
                     player.start_new_game_plus(true)
@@ -140,7 +117,6 @@ class Chapter3
                     player.survived_ch3(true)
                     player.start_new_game_plus(true)
                     gets
-                   # player.ending(true) NEED TO SETUP THIS FOR A ENDING
             end
     end
     
