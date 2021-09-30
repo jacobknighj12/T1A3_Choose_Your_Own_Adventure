@@ -86,7 +86,7 @@ class Chapter2
                 when 1
                     puts "Collected 50 gold"
                     player.gain_gold(50)
-                    player.spend_time(1)
+                    
                     
                 when 2
                     player.gain_mana(50)

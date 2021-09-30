@@ -18,7 +18,7 @@ class Chapter2_1
         @options.push("Push the creature to the side and run away")
         @options.push("Attempt to light the bedside lamp and hold it towards the creature(50%)")
         if player.check_mana != 0
-        @options.push("You see a glimmer from inside the creature, grab it?(-1 mana)") else
+        @options.push("You see a glimmer from inside the creature, grab it?(-1 mana)") 
         end # if you want more options you will need to apply the if to consequences too
 
         @consequences = []
@@ -80,6 +80,7 @@ class Chapter2_1
             players_choice = get_player_choice
             @current_mana = player.check_mana
             @current_hp = player.check_hp
+            @current_stamina = player.check_stamina
 
             case players_choice
                 when 0
@@ -104,7 +105,7 @@ class Chapter2_1
                     player.take_damage(100)
                 end
                 when 4
-                    if @current_mana != 0
+                    if @current_mana != 0 #or @check_stamina <= 25
                     puts "+45 Mana"
                     puts "-25 Stamina"
                     player.gain_mana(45)
@@ -112,9 +113,12 @@ class Chapter2_1
                     else
                         puts "You dont have the requirements please pick another option"
                         get_player_choice() # DONT WORRY THIS ISNT NEEDED ANYMORE I JUST FIXED THE IF STATEMENT!
+                      while get_player_choice() == "" or get_player_choice() == "5"
+                        get_player_choice()
                         #PLAY IS STILL ABLE TO INPUT THIS OPTION! IT BREAKS THE GAME
+                      end
                 end
-                player.spend_time(1)
+                
     end
     
 

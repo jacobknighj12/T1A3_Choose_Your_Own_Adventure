@@ -2,6 +2,7 @@ require_relative "Chapters/Chapter1"
 require_relative "Chapters/Chapter2"
 require_relative "Chapters/Chapter2_1"
 require_relative "Chapters/Chapter3"
+require_relative "Chapters/Chapter_End" 
 require_relative "Player" 
 require 'rainbow'
 require 'tty-link' #intention was to allow the user to click the link in terminal, didnt pan out that way but kept it because it looks nice
@@ -18,6 +19,7 @@ chapter_map[0] = Chapter1.new(player)
 chapter_map[1] = Chapter2.new(player)
 chapter_map[2] = Chapter3.new(player)
 chapter_map[10] = Chapter2_1.new(player)
+chapter_map[8] = Chapter_End.new(player)
 index = 0
 
 #MAJOR ISSUE MY DUDE, CANT USE IF's FOR THE CASE OPTIONS WILL NEED TO FIND A FIX
@@ -45,20 +47,45 @@ while true
         index += 1 
         end
     elsif index == 2
+        if player.check_survived_ch3 == true
+            index = 8
+        else
         player.heal_damage(5)
         index = 0
-
+        end
+    elsif index == 9
+        puts "if index == 9 works"
+        gets
+        if player.check_survived_ch3 == true
+            puts "changing the index worked"
+            gets
+        index = 0
+        else
+            puts "about to break"
+            gets
+            break
+        end
     else
         
         puts "Your not in chapter 1" # REMOVE LATER FOR DEBUGGING PURPOSES
         
     index += 1 # location of this boy is causing issues CANT LOOP BACK WITHOUT MAKING ISSUES FROM 2.1 HELP ME. HELP ME ITS #EDIT CURRENTly WORKING JUST LEAVE THIS ALONE PRETTY SURE I GOT IT GOOD
     end
-    if player.hp == 0
-        #continue() will need to call this
-        puts "game over not completed yet. please try again later"
+    
+    if player.check_hp == 0
+        puts "YOU DIED.. GAME OVER" 
+        puts "Retry? Y/N"
+        input = gets
+        player.spend_time(1)
+        if input.include? "Y" or "y"
+        puts "You wake up with a gasp in the tavern."
+        puts "Press Enter to continue..."
         gets
-        break
+        player.heal_damage(80)
+        index = 0
+        else
+            break
+        end
     else
         puts "Press Enter to start the next chapter..."
         gets

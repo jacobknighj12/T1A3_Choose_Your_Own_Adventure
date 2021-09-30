@@ -11,6 +11,7 @@ class Player
     attr_reader :time
     attr_reader :door_locked
     attr_reader :new_game_plus
+    attr_reader :survived_ch3
     
     # attr_reader :blacklist 
     #Got stuck on blacklist going to leave it for now... not a essential feature
@@ -42,6 +43,7 @@ class Player
             @mana = 100
             @time = 0
             @new_game_plus = false
+            @survived_ch3 = false
         elsif @name.include? "Jacob" 
             puts "secret inputed, this is no longer a normal run."
             @hp = 100
@@ -51,6 +53,7 @@ class Player
             @mana = 100
             @time = 0
             @new_game_plus = false
+            @survived_ch3 = false
         elsif @name.include? "Samos" 
                 puts "secret inputed, this is no longer a normal run."
                 @hp = 100
@@ -60,6 +63,7 @@ class Player
                 @mana = 10000
                 @time = 200
                 @new_game_plus = false
+                @survived_ch3 = false
                 else
                 @hp = 100
                 @max_hp = 100
@@ -68,6 +72,7 @@ class Player
                 @mana = 0
                 @time = 0
                 @new_game_plus = false
+                @survived_ch3 = false
                 end
         puts "Unknown: So, your name is #{@name}"
         puts "Press the Enter key to continue..."
@@ -124,6 +129,15 @@ class Player
     end
     def start_new_game_plus(state)
         @new_game_plus = state
+    end
+    def check_stamina()
+        return @stamina
+    end
+    def check_survived_ch3()
+        return @survived_ch3
+    end
+    def survived_ch3(state)
+        @survived_ch3 = state
     end
     # def hp_missing() THIS STUFF AINT WORKING I NEED TO FIND HP FOR HEALING AMMOUNT AND AMMOUNT OF GOLD TO COST FIXX THIS! GOING OVER MAX HP NOW TOO YAY!
     #     @hp 

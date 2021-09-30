@@ -41,6 +41,7 @@ class Chapter1
     def print_intro(player_name)
         
             puts "Chapter 1"
+            
             # puts "#{player_name} sees a #{@name}." may use this at some point?
             # puts @art same?
             puts @chapter_intro
@@ -73,7 +74,9 @@ class Chapter1
         #     p new_game_plus
         #     new_game_plus = "*#___=  -%%&* %%##@1////...."
         # end
-        
+        if player.check_hp != 100
+          puts  Rainbow("You feel bruises and cuts on your body but dont remember getting them, whats going on...").yellow
+        end
             print_intro(player.name)
             print_options
             players_choice = get_player_choice
@@ -99,7 +102,7 @@ class Chapter1
                 player.lock_door(true)
                 
             end
-            player.spend_time(1)
+            
     end
     
 end
