@@ -6,23 +6,23 @@ class Chapter3
     def initialize(player)
         @npc1 = ("Night horrors")
         @npc1_voice = ("Can only be described as A8D9__█░░█░█░█_D1C2H█░█░█9I1D█░░█░░9J9H3E0")
-        @chapter_intro = ("After entering the forrest you start hearing sounds all around you, #{npc1} the sounds #{@npc1_voice} but you press on. It starts getting colder when you get closer to the ruins.. you clear the forrest and reach an open cleaning filled with dead flowers, you can see the man off in the distance, he waves urgently and shouts. but it was too late. after turning around all you see along the entire edgeline of the forrest cold, almost dead eyes thousands of them as far left and right as you can see, seconds later your surrounded by night terrors") 
+        @chapter_intro = ("After entering the forest you start hearing sounds all around you, #{npc1} the sounds #{@npc1_voice} but you press on. It starts getting colder when you get closer to the ruins.. you clear the forest and reach an open cleaning filled with dead flowers, you can see the man off in the distance, he waves urgently and shouts. but it was too late. after turning around all you see along the entire edgeline of the forest cold, almost dead eyes thousands of them as far left and right as you can see, seconds later your surrounded by night terrors") 
         #the sentence doesnt like to be shown over multiple lines so it will be one line
         #will leave intro's for the scene and surroundings of the player
         
         @options = []
         @options.push("fight one at a time with your knife")
         #if player.check_mana >= 10
-        @options.push("Tear some light out of the entitys(10 mana required)") #gain 100
+        @options.push("Tear some light out of the entities(10 mana required)") #gain 100
         #end
         #if player.check_mana >= 50
-        @options.push("Tear 10's of lights out of the entitys(50 mana required)") # gain 250
+        @options.push("Tear 10's of lights out of the entities(50 mana required)") # gain 250
         #end
         #if player.check_mana >= 320
-        @options.push("Tear 100's of lights out of the entitys(320 mana required)") #gain 620
+        @options.push("Tear 100's of lights out of the entities(320 mana required)") #gain 620
         #end
         #if player.check_mana >= 1000
-        @options.push("Tear 1000's of lights out of the entitys(1000 mana required)")
+        @options.push("Tear 1000's of lights out of the entities(1000 mana required)")
         #end
 
         conseq1 = []
@@ -31,11 +31,11 @@ class Chapter3
 
 
         @consequences = []
-        @consequences.push("You brandish the knife, its now glowing a violent blue and attempt to fight your way out, no matter how many of them you kill. More endlessly follow, until you reach the exhaustion point and not being able to see anymore then fall down and slowly feel yourself being devoured.")
-        @consequences.push("A dull blue energy eminating from yourself reaches outwards and begins raviging the entitys around you. The energy quickly dulls and fades, you hear echoing words. 'You are not strong enough yet.' as you are overrun you fall down and slowly feel yourself being devoured.")
-        @consequences.push("A consistent blue energy eminating from yourself reaches outwards and begins raviging the entitys further around you, lashing out at any that comes near, there begin to charge in waves, taking more and more ground till once again. The energy dulls, fades and again, you hear echoing words. 'You are not strong enough yet.' as you are overrun you fall down and slowly feel yourself being devoured.")
-        @consequences.push("A bright blue energy eminating from yourself reaches outwards and begins raviging the entitys far away lashes of this energy rip through hundreds the corpses piling higher every moment, fighing against this horde after what feels like an eternity the energy once again begins to fade, its still not enough and again, you hear echoing words. 'You are not strong enough yet.' as you are overrun you fall down and slowly feel yourself being devoured.")
-        @consequences.push Rainbow("A brilliant, dazzling light fills the entire area, even you are almost blinded by the ammount of energy you have accumulated. This immense power like becoming almost an entity of its own each strand without hesitation thousands of the entities are decimated waves and tides of the creatures like wheat to the scythe decimating anything that comes near, the brilliance of the flow of mana doesnt dim, you can almost feel anything living around you, you can tell the last Night terror has been killed...").blue.bright
+        @consequences.push("You brandish the knife, it's now glowing a violent blue and attempt to fight your way out, no matter how many of them you kill. More endlessly follow, until you reach the exhaustion point and not being able to see anymore then fall down and slowly feel yourself being devoured.")
+        @consequences.push("A dull blue energy eminating from yourself reaches outwards and begins raviging the entities around you. The energy quickly dulls and fades, you hear echoing words. 'You are not strong enough yet.' as you are overrun you fall down and slowly feel yourself being devoured.")
+        @consequences.push("A consistent blue energy eminating from yourself reaches outwards and begins raviging the entities further around you, lashing out at any that comes near, there begin to charge in waves, taking more and more ground till once again. The energy dulls, fades and again, you hear echoing words. 'You are not strong enough yet.' as you are overrun you fall down and slowly feel yourself being devoured.")
+        @consequences.push("A bright blue energy eminating from yourself reaches outwards and begins raviging the entities far away lashes of this energy rip through hundreds the corpses piling higher every moment, fighing against this horde after what feels like an eternity the energy once again begins to fade, it's still not enough and again, you hear echoing words. 'You are not strong enough yet.' as you are overrun you fall down and slowly feel yourself being devoured.")
+        @consequences.push Rainbow("A brilliant, dazzling light fills the entire area, even you are almost blinded by the ammount of energy you have accumulated. This immense power like becoming almost an entity of it's own each strand without hesitation thousands of the entities are decimated waves and tides of the creatures like wheat to the scythe decimating anything that comes near, the brilliance of the flow of mana doesnt dim, you can almost feel anything living around you, you can tell the last Night terror has been killed...").blue.bright
         
         
     end
@@ -60,7 +60,7 @@ class Chapter3
             print "Enter your choice: "
             players_choice = gets.to_i - 1 # 0->3
             while players_choice == 1 #-1 here from each ajusted number
-                if player.check_mana <= 10
+                if player.check_mana <= 9
                 puts "you dont have the requirements for this (10 Mana)"
                 puts "Enter your choice: "
                 players_choice = gets.to_i - 1
@@ -69,7 +69,7 @@ class Chapter3
                 end
              end
              while players_choice == 2 #-1 here from each ajusted number
-                if player.check_mana <= 50
+                if player.check_mana <= 49
                 puts "you dont have the requirements for this (50 Mana)"
                 puts "Enter your choice: "
                 players_choice = gets.to_i - 1
@@ -78,7 +78,7 @@ class Chapter3
                 end
              end
              while players_choice == 3 #-1 here from each ajusted number
-                if player.check_mana <= 320
+                if player.check_mana <= 319
                 puts "you dont have the requirements for this (320 Mana)"
                 puts "Enter your choice: "
                 players_choice = gets.to_i - 1
@@ -87,7 +87,7 @@ class Chapter3
                 end
              end
              while players_choice == 4 #-1 here from each ajusted number
-                if player.check_mana <= 1000
+                if player.check_mana <= 999
                 puts "you dont have the requirements for this (1000 Mana)"
                 puts "Enter your choice: "
                 players_choice = gets.to_i - 1
@@ -117,22 +117,22 @@ class Chapter3
                     player.spend_time(1)
                 when 1
                     puts Rainbow("After some time they overwhelm you. Within no time there is not a trace left of what you were. GAME OVER").red
-                    puts Rainbow("gain +100 mana").blue
-                    player.gain_mana(100)
+                    puts Rainbow("gain +50 mana").blue
+                    player.gain_mana(50)
                     player.take_damage(10)
                     player.start_new_game_plus(true)
                     player.spend_time(1)
                 when 2
                     puts Rainbow("After some time they overwhelm you. Within no time there is not a trace left of what you were. GAME OVER").red
-                    puts Rainbow("gain +250 mana").blue
-                    player.gain_mana(250)
+                    puts Rainbow("gain +200 mana").blue
+                    player.gain_mana(200)
                     player.take_damage(10)
                     player.start_new_game_plus(true)
                     player.spend_time(1)
                 when 3
                     puts Rainbow("After some time they overwhelm you. Within no time there is not a trace left of what you were. GAME OVER").red
-                    puts Rainbow("gain +620 mana").blue
-                    player.gain_mana(620)
+                    puts Rainbow("gain +600 mana").blue
+                    player.gain_mana(600)
                     player.take_damage(10)
                     player.start_new_game_plus(true)
                     player.spend_time(1)

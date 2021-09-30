@@ -8,7 +8,7 @@ class Chapter2_1
         # oh no you didnt lock your door!
         @npc1 = ("Night terror")
         @npc1_voice = ("a rasping wheeze echos")
-        @chapter_intro = ("You get up the stairs to the second floor where the rooms are and find your room, you clumsily open the door and a dark and damn room awaits your rest. You gladly sit your things down and lay your head to rest, trying not to think about the weird feeling you have right now.") 
+        @chapter_intro = ("You get up the stairs to the second floor where the rooms are and find your room, you clumsily open the door and a dark and damn room await's your rest. You gladly sit your things down and lay your head to rest, trying not to think about the weird feeling you have right now.") 
         #the sentence doesnt like to be shown over multiple lines so it will be one line
         #will leave intro's for the scene and surroundings of the player
         
@@ -22,12 +22,12 @@ class Chapter2_1
        # end # if you want more options you will need to apply the if to consequences too
 
         @consequences = []
-        @consequences.push("You jump up and swing your taveling bag with all your weight, it slams into the #{@npc1}. Against the weight of the imapct the creature is flung into the wall, momentarily stunned but after that breif moment it lunches itself towards you and attacks you, burying its teeth into you, you wince in pain and tear it off of you, knowing that hitting it again would do nothing you run out with your things and sprint out of the inn.")
+        @consequences.push("You jump up and swing your taveling bag with all your weight, it slams into the #{@npc1}. Against the weight of the imapct the creature is flung into the wall, momentarily stunned but after that breif moment it lunches it'self towards you and attacks you, burying it's teeth into you, you wince in pain and tear it off of you, knowing that hitting it again would do nothing you run out with your things and sprint out of the inn.")
         @consequences.push("Slowly reaching into your bag you find your knife, clasping your hand around it jumping up and with a single motion drawing it from your bag and embedding it into the #{@npc1} you notice as you hold it against the thing, your knife has a dull glow, the #{@npc1} hisses in pain with #{@npc1_voice} and take off breaking out though the thatched roof. You leave the inn going outside")
         @consequences.push("You grab your bag while jumping up and pushing your weight forwards, colliding with #{@npc1} slamming it against the wall, for a breif moment it is stunned and you are able to sprint out of the inn")
         @consequences.push("You roll the dice.")
       #  if player.check_mana != 0
-        @consequences.push("You reach, but not with your hand, but somthing else you feel as though you can pull it away reaching with your concience it feels like pushing through mud, till you grab onto the light. You feel stronger, the weight of the mud, more like soup now, you pull back to see the #{@npc1} colapse on itself with incredible force snaps and cracks from all of its bones as it crumples into a lump of remains. You leave the specticle, having done enough for one night and leave the inn going outside")
+        @consequences.push("You reach, but not with your hand, but somthing else you feel as though you can pull it away reaching with your concience it feels like pushing through mud, till you grab onto the light. You feel stronger, the weight of the mud, more like soup now, you pull back to see the #{@npc1} colapse on it'self with incredible force snaps and cracks from all of it's bones as it crumples into a lump of remains. You leave the specticle, having done enough for one night and leave the inn going outside")
        # end
         
     end
@@ -51,7 +51,7 @@ class Chapter2_1
             if input.include? "2"
                 puts "You think to yourself, why would I say that..."
             end
-            puts "...Your paralyzed. All you can do is open your eyes to the thing that now breathes even more cold air around you, theres only moonlight silhouetting the thing, with a few highlights over however it giving you more then enough information. Around what you assume is the 'face' is long hook like teeth jutting out more than an arms length outwards, its form looks like that of a leech made of bone and sparse flesh, of that flesh that it has is glistening as though being completely frozen."
+            puts "...Your paralyzed. All you can do is open your eyes to the thing that now breathes even more cold air around you, theres only moonlight silhouetting the thing, with a few highlights over however it's giving you more than enough information. Around what you assume is the 'face' is long hook like teeth jutting out more than an arms length outwards, it's form looks like that of a leech made of bone and sparse flesh, of that flesh that it has is glistening as though being completely frozen."
             puts "Press the Enter key to continue..."
             gets
             puts "The #{npc1} comes closer slowly creeping forwards, you feel like you can move again."
@@ -113,6 +113,7 @@ class Chapter2_1
                 else
                     puts "You falter, drop the match after failing to strike it to flame, in that moment The #{npc1} Launches forwards. Your vision goes dark hot liquid is felt on your skin, you start to feel hooks ripping though your arms but then... nothing."
                     player.take_damage(100)
+                    player.spend_time(1)
                 end
                 when 4
                     if @current_mana != 0 #or @check_stamina <= 25
@@ -122,10 +123,10 @@ class Chapter2_1
                     player.spend_stamina(25)#if stamina is less than required ammount = die
                     else
                         puts "You dont have the requirements please pick another option"
-                        get_player_choice() # DONT WORRY THIS ISNT NEEDED ANYMORE I JUST FIXED THE IF STATEMENT!
+                        get_player_choice() 
                       while get_player_choice() == "" or get_player_choice() == "5"
                         get_player_choice()
-                        #PLAY IS STILL ABLE TO INPUT THIS OPTION! IT BREAKS THE GAME
+                        
                       end
                 end
                 

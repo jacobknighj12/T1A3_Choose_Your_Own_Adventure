@@ -65,7 +65,7 @@ class Player
                 @new_game_plus = false
                 @survived_ch3 = false
                 else
-                @hp = 95
+                @hp = 100
                 @max_hp = 100
                 @gld = 10
                 @stam = 100

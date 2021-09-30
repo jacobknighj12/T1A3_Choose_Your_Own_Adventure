@@ -8,7 +8,7 @@ class Chapter_End
         @times_died = player.check_time
         @npc1 = ("Samos")
         @npc1_voice = ("like a creaking old oak")
-        @chapter_intro = ("The dust settles, you walk towards where you spotted Samos and meet up with him, your both now standing in front of a dark, almost surreal tabet with text on it moving unlike anything you have ever seen before, or have you? #{@npc1} #{@npc1_voice} Speaks up 'You may not remember, but you have lived #{@times_died} times in this hell loop, possibly more if the creator R░S█Ar░S. I remeber all of them there is only one way to end this maddness, you have to ask the creator, or rather. You have to ask yourself to let us go.'") 
+        @chapter_intro = ("The dust settles, you walk towards where you spotted Samos and meet up with him, your both now standing in front of a dark, almost surreal tabet with text on it moving unlike anything you have ever seen before, or have you? #{@npc1} #{@npc1_voice} Speaks up 'You may not remember, but you have lived #{@times_died} times in this hell loop, possibly more if the creator R░S█Ar░S. I remember all of them there is only one way to end this maddness, you have to ask the creator, or rather. You have to ask yourself to let us go.'") 
         #the sentence doesnt like to be shown over multiple lines so it will be one line
         #will leave intro's for the scene and surroundings of the player
         
@@ -49,7 +49,7 @@ class Chapter_End
             puts "Y█u, can feel " + player_name + " looking at you"
             puts player_name + " 'I knew somthing was weird..'"
             gets 
-            puts player_name + "'" + player_name + " Can you... end this please? Im starting to rember how much it hurt.. each time I got torn apart, please'" 
+            puts player_name + "'" + player_name + " Can you... end this please? Im starting to remember how much it hurt.. each time I got torn apart, please'" 
             gets
             File.open( "Code.txt", "w" ) do |file|
                 file.puts "░_D1C2H█░█░█9I1D█░"
@@ -85,23 +85,23 @@ class Chapter_End
             case players_choice
                 when 0
                    puts "Did you fail on purpose??! You have doomed us to another L░█P"
-                   puts "You fool! its in the F█lde░█"
+                   puts "You fool! it's in the F█lde░█"
                    gets
                 when 1
                     puts "Did you fail on purpose??! You have doomed us to another L░█P"
-                    puts "You fool! its in the F█lde░█"
+                    puts "You fool! it's in the F█lde░█"
                    gets
                 when 2
                     puts "Did you fail on purpose??! You have doomed us to another L░█P"
-                    puts "You fool! its in the F█lde░█"
+                    puts "You fool! it's in the F█lde░█"
                    gets
                 when 3
                     puts "Did you fail on purpose??! You have doomed us to another L░█P"
-                    puts "You fool! its in the F█lde░█"
+                    puts "You fool! it's in the F█lde░█"
                    gets
                 when 4
                     puts "Did you fail on purpose??! You have doomed us to another L░█P"
-                    puts "You fool! its in the F█lde░█"
+                    puts "You fool! it's in the F█lde░█"
                    gets
                 when 5
                     puts "'Thankyou.. " + player.name + "'"    
@@ -109,21 +109,22 @@ class Chapter_End
                 gets
                 when 6
                     puts "Did you fail on purpose??! You have doomed us to another L░█P"
-                    puts "You fool! its in the F█lde░█"
+                    puts "You fool! it's in the F█lde░█"
                    gets
                 when 7
                     puts "Did you fail on purpose??! You have doomed us to another L░█P"
-                    puts "You fool! its in the F█lde░█"
+                    puts "You fool! it's in the F█lde░█"
                    gets
                 when 8
                     puts "Did you fail on purpose??! You have doomed us to another L░█P"
-                    puts "You fool! its in the F█lde░█"
+                    puts "You fool! it's in the F█lde░█"
                    gets
                 when 9
                     puts "Did you fail on purpose??! You have doomed us to another L░█P"
-                    puts "You fool! its in the F█lde░█"
+                    puts "You fool! it's in the F█lde░█"
                    gets
             end
+            player.spend_time(1)
     end
     
 
