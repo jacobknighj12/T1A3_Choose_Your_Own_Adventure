@@ -20,18 +20,18 @@ class Chapter3
         
         @options = []
         @options.push("fight one at a time with your knife")
-        if player.check_mana >= 10
+        #if player.check_mana >= 10
         @options.push("Tear some light out of the entitys(10 mana required)") #gain 100
-        end
-        if player.check_mana >= 50
+        #end
+        #if player.check_mana >= 50
         @options.push("Tear 10's of lights out of the entitys(50 mana required)") # gain 250
-        end
-        if player.check_mana >= 320
+        #end
+        #if player.check_mana >= 320
         @options.push("Tear 100's of lights out of the entitys(320 mana required)") #gain 620
-        end
-        if player.check_mana >= 1000
+        #end
+        #if player.check_mana >= 1000
         @options.push("Tear 1000's of lights out of the entitys(1000 mana required)")
-        end
+        #end
 
         conseq1 = []
 
@@ -111,7 +111,7 @@ class Chapter3
                 when 4
                     player.survived_ch3(true)
                     player.start_new_game_plus(true)
-                    puts "YOU HAVE FINISHED THE CURRENT ALPHA"
+                    
                     gets
                    # player.ending(true) NEED TO SETUP THIS FOR A ENDING
             end

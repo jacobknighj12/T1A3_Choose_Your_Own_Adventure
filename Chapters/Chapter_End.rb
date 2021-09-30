@@ -24,22 +24,22 @@ class Chapter_End
         @options.push("░█9I1DC2H█░█░█░░9J9H3█░")
         
         @consequences = []
-        @consequences.push("1")
-        @consequences.push("2")
-        @consequences.push("3")
-        @consequences.push("4")
-        @consequences.push("5")
-        @consequences.push("6")
-        @consequences.push("7")
-        @consequences.push("8")
-        @consequences.push("9")
+        @consequences.push("")
+        @consequences.push("")
+        @consequences.push("")
+        @consequences.push("")
+        @consequences.push("")
+        @consequences.push("")
+        @consequences.push("")
+        @consequences.push("")
+        @consequences.push("")
         
         
     end
     # Well, #{player.name} #{@npc1} #{npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area,you may want to finish your drink and leave soon.
     def print_intro(player_name)
 
-            puts "THIS IS THE END, for now"
+            puts "Welcome to THE END"
             # puts "#{player_name} sees a #{@name}." may use this at some point?
             # puts @art same?
             puts @chapter_intro
@@ -84,35 +84,44 @@ class Chapter_End
 
             case players_choice
                 when 0
-                   puts "Did you fail on purpose??!"
+                   puts "Did you fail on purpose??! You have doomed us to another L░█P"
+                   puts "You fool! its in the F█lde░█"
                    gets
                 when 1
-                    puts "Did you fail on purpose??!"
+                    puts "Did you fail on purpose??! You have doomed us to another L░█P"
+                    puts "You fool! its in the F█lde░█"
                    gets
                 when 2
-                    puts "Did you fail on purpose??!"
+                    puts "Did you fail on purpose??! You have doomed us to another L░█P"
+                    puts "You fool! its in the F█lde░█"
                    gets
                 when 3
-                    puts "Did you fail on purpose??!"
+                    puts "Did you fail on purpose??! You have doomed us to another L░█P"
+                    puts "You fool! its in the F█lde░█"
                    gets
                 when 4
-                    puts "Did you fail on purpose??!"
+                    puts "Did you fail on purpose??! You have doomed us to another L░█P"
+                    puts "You fool! its in the F█lde░█"
                    gets
                 when 5
                     puts "'Thankyou.. " + player.name + "'"    
                 player.survived_ch3(false)
                 gets
                 when 6
-                    puts "Did you fail on purpose??!"
+                    puts "Did you fail on purpose??! You have doomed us to another L░█P"
+                    puts "You fool! its in the F█lde░█"
                    gets
                 when 7
-                    puts "Did you fail on purpose??!"
+                    puts "Did you fail on purpose??! You have doomed us to another L░█P"
+                    puts "You fool! its in the F█lde░█"
                    gets
                 when 8
-                    puts "Did you fail on purpose??!"
+                    puts "Did you fail on purpose??! You have doomed us to another L░█P"
+                    puts "You fool! its in the F█lde░█"
                    gets
                 when 9
-                    puts "Did you fail on purpose??!"
+                    puts "Did you fail on purpose??! You have doomed us to another L░█P"
+                    puts "You fool! its in the F█lde░█"
                    gets
             end
     end

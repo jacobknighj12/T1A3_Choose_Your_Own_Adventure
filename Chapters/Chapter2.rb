@@ -15,35 +15,35 @@ class Chapter2
         
         @options.push("Go out to the north forrests ruins.")
         @options.push("Ask around if anyone saw the night terror and attempt to find where it went.")
-        if player.mana != 0
+        #if player.mana != 0
         @options.push("Hold your hand out and attempt to recreate the power you felt recently")
-        end
-        if player.time <= 3 #swap fpr newgame+ PLACEHOLDER
+       # end
+       # if player.time <= 3 #swap fpr newgame+ PLACEHOLDER
         @options.push("'Damn why do I feel like I have been here before'")
-        end
-        if player.check_hp != 100
-            if player.gld != 0
+       # end
+       # if player.check_hp != 100
+       #     if player.gld != 0
              @options.push("Go out and buy some things to patch your wounds")
-            end
-        end
+        #    end
+       # end
 
         @consequences = []
-        if player.hp 
-        end
+       # if player.hp 
+      #  end
         
         @consequences.push("You dont want to waste any time here, pushing forwards to the north.")
         @consequences.push("After spending some time walking around talking to others and speculating on rumours that you gathered one of the townspeople tells you that they saw a large shadow heading north around the time everyone was talking about, are #{@npc1} issue linked with the creature? The town notice board has a reward for any of those brave enough to investigate you can claim 1/4 beforehand to use to prepare for the investiagtion, currently being held by the inn. Before leaving you decided that you may as well take the investigation deposit before heading out. You decide its time to leave and find out")
-        if player.mana != 0
+      #  if player.mana != 0
         @consequences.push("you find a quiet place then, holding out your hand and reimagining the feeling you felt before. While doing this you see a glow from your chest, you dare not touch it, you feel as though you have gained more understanding of this power.")
-        end                                                                                                                         #{magic ammount} ^ This would be really cool to see a different color
-        if player.time <= 3 #swap fpr newgame+ PLACEHOLDER
+      #  end                                                                                                                         #{magic ammount} ^ This would be really cool to see a different color
+      #  if player.time <= 3 #swap fpr newgame+ PLACEHOLDER
         @consequences.push("You ponder on this thought for a moment but, still feeling the urgency of going north you head that direction.")
-        end
-        if player.check_hp != 100
-            if player.gld != 0
+      #  end
+     #   if player.check_hp != 100
+     #       if player.gld != 0
         @consequences.push("You go out to try and find somwhere like a herbalists open to get some basic supplies to fix yourself up, fortunately.(1 gold per hp healed)")
-            end 
-        end
+      #      end 
+     #   end
         
         
     end
@@ -65,9 +65,22 @@ class Chapter2
     end
         end
 
-    def get_player_choice()
+    def get_player_choice(player)
             print "Enter your choice: "
             players_choice = gets.to_i - 1 # 0->3
+            while players_choice == 4 #-1 here from each ajusted number
+                if player.check_gld == 0
+                puts "you dont have the requirements for this (1 gold)"
+                puts "Enter your choice: "
+                players_choice = gets.to_i - 1
+                elsif player.check_hp >= player.max_hp
+                puts "you dont have the requirements for this (health is maxed!)"
+                puts "Enter your choice: "
+                players_choice = gets.to_i - 1
+                else
+                break
+                end
+             end
             puts @consequences[players_choice]
             return players_choice
             
@@ -77,7 +90,7 @@ class Chapter2
     def perform(player)
             print_intro(player.name)
             print_options
-            players_choice = get_player_choice
+            players_choice = get_player_choice(player)
             
 
             case players_choice
@@ -91,17 +104,18 @@ class Chapter2
                 when 2
                     player.gain_mana(50)
                 when 3
-                    missing_hp = player.max_hp - player.hp
-                    if player.gld <= missing_hp
+                    
+                    
+                when 4
+                    missing_hp = player.check_max_hp - player.check_hp
+                    p missing_hp
+                    if player.check_gld <= missing_hp
                         player.spend_gold(missing_hp)
                         player.heal_damage(missing_hp)
                     else
-                        player.heal_damage(player.gld)
-                        player.spend_gold(player.gld)
+                        player.heal_damage(missing_hp)
+                        player.spend_gold(missing_hp)
                     end
-                    
-                when 4
-                
             end
     end
     

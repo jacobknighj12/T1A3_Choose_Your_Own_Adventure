@@ -15,14 +15,16 @@ puts "This is a choose your own adventure horror game. Please take the time to s
     puts "Press Enter to start..."
     gets
 player = Player.new
+#def chapter_call()
+#    return
 chapter_map[0] = Chapter1.new(player)
 chapter_map[1] = Chapter2.new(player)
 chapter_map[2] = Chapter3.new(player)
 chapter_map[10] = Chapter2_1.new(player)
 chapter_map[8] = Chapter_End.new(player)
 index = 0
-
-#MAJOR ISSUE MY DUDE, CANT USE IF's FOR THE CASE OPTIONS WILL NEED TO FIND A FIX
+#end
+#MAJOR ISSUE MY DUDE, CANT USE IF's FOR THE CASE OPTIONS WILL NEED TO FIND A FIX. Attemping fix, dont know how to call chapter it doesnt like it
 
 
 #puts Rainbow("this is red").red + " and " + Rainbow("this on yellow bg").bg(:yellow) + " and " + Rainbow("even bright underlined!").underline.bright
@@ -39,6 +41,15 @@ while true
     if index == 10
         index = 1 #exit side loop
     end
+    if index == 8
+        if player.check_survived_ch3 == false
+            break
+        else
+        player.heal_damage(5)
+        index = 0
+        end
+        
+    end
     if index == 0  
         
         if door_locked == false
@@ -52,18 +63,6 @@ while true
         else
         player.heal_damage(5)
         index = 0
-        end
-    elsif index == 9
-        puts "if index == 9 works"
-        gets
-        if player.check_survived_ch3 == true
-            puts "changing the index worked"
-            gets
-        index = 0
-        else
-            puts "about to break"
-            gets
-            break
         end
     else
         

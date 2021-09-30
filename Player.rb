@@ -65,7 +65,7 @@ class Player
                 @new_game_plus = false
                 @survived_ch3 = false
                 else
-                @hp = 100
+                @hp = 95
                 @max_hp = 100
                 @gld = 10
                 @stam = 100
@@ -90,11 +90,17 @@ class Player
     def check_hp()
         return @hp
     end
+    def check_max_hp()
+        return @max_hp
+    end
     def gain_gold(ammount)
         @gld += ammount
     end
     def spend_gold(ammount)
         @gld -= ammount
+    end
+    def check_gld()
+        return @gld
     end
     def spend_stamina(ammount)
         @stam -= ammount
@@ -129,6 +135,9 @@ class Player
     end
     def start_new_game_plus(state)
         @new_game_plus = state
+    end
+    def is_new_game_plus()
+        return @new_game_plus
     end
     def check_stamina()
         return @stamina

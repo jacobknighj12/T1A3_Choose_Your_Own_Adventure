@@ -17,18 +17,18 @@ class Chapter2_1
         @options.push("Slowly slide your hand towards your bag and reach for your knife")
         @options.push("Push the creature to the side and run away")
         @options.push("Attempt to light the bedside lamp and hold it towards the creature(50%)")
-        if player.check_mana != 0
+       # if player.check_mana != 0
         @options.push("You see a glimmer from inside the creature, grab it?(-1 mana)") 
-        end # if you want more options you will need to apply the if to consequences too
+       # end # if you want more options you will need to apply the if to consequences too
 
         @consequences = []
         @consequences.push("You jump up and swing your taveling bag with all your weight, it slams into the #{@npc1}. Against the weight of the imapct the creature is flung into the wall, momentarily stunned but after that breif moment it lunches itself towards you and attacks you, burying its teeth into you, you wince in pain and tear it off of you, knowing that hitting it again would do nothing you run out with your things and sprint out of the inn.")
         @consequences.push("Slowly reaching into your bag you find your knife, clasping your hand around it jumping up and with a single motion drawing it from your bag and embedding it into the #{@npc1} you notice as you hold it against the thing, your knife has a dull glow, the #{@npc1} hisses in pain with #{@npc1_voice} and take off breaking out though the thatched roof. You leave the inn going outside")
         @consequences.push("You grab your bag while jumping up and pushing your weight forwards, colliding with #{@npc1} slamming it against the wall, for a breif moment it is stunned and you are able to sprint out of the inn")
         @consequences.push("You roll the dice.")
-        if player.check_mana != 0
+      #  if player.check_mana != 0
         @consequences.push("You reach, but not with your hand, but somthing else you feel as though you can pull it away reaching with your concience it feels like pushing through mud, till you grab onto the light. You feel stronger, the weight of the mud, more like soup now, you pull back to see the #{@npc1} colapse on itself with incredible force snaps and cracks from all of its bones as it crumples into a lump of remains. You leave the specticle, having done enough for one night and leave the inn going outside")
-        end
+       # end
         
     end
     # Well, #{player.name} #{@npc1} #{npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area,you may want to finish your drink and leave soon.
@@ -65,9 +65,19 @@ class Chapter2_1
             end
     end
 
-    def get_player_choice()
+    def get_player_choice(player)
             print "Enter your choice: "
             players_choice = gets.to_i - 1 # 0->3
+            while players_choice == 4 #-1 here from each ajusted number
+                if player.check_mana == 0
+                puts "you dont have the requirements for this (1 mana)"
+                puts "Enter your choice: "
+                players_choice = gets.to_i - 1
+                else
+                    break
+                end
+             end
+
             puts @consequences[players_choice]
             return players_choice
             
@@ -77,7 +87,7 @@ class Chapter2_1
     def perform(player)
             print_intro(player.name)
             print_options
-            players_choice = get_player_choice
+            players_choice = get_player_choice(player)
             @current_mana = player.check_mana
             @current_hp = player.check_hp
             @current_stamina = player.check_stamina
