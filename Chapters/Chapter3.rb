@@ -4,17 +4,9 @@ class Chapter3
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
     def initialize(player)
-        @npc1 = ("
-            ▄▀▀█▄▄▄▄  ▄▀▀▄ ▀▄  ▄▀▀▀█▀▀▄  ▄▀▀█▀▄    ▄▀▀▀█▀▀▄  ▄▀▀▄ ▀▀▄ 
-            ▐  ▄▀   ▐ █  █ █ █ █    █  ▐ █   █  █  █    █  ▐ █   ▀▄ ▄▀ 
-              █▄▄▄▄▄  ▐  █  ▀█ ▐   █     ▐   █  ▐  ▐   █     ▐     █   
-              █    ▌    █   █     █          █        █            █   
-             ▄▀▄▄▄▄   ▄▀   █    ▄▀        ▄▀▀▀▀▀▄   ▄▀           ▄▀    
-             █    ▐   █    ▐   █         █       █ █             █     
-             ▐        ▐        ▐         ▐       ▐ ▐             ▐     ")
-        @npc1_voice = ("Can only be described as
-            A8D9__█░░█░█░█_D1C2H█░█░█9I1D█░░█░░9J9H3E0")
-        @chapter_intro = ("After entering the forrest you start hearing sounds all around you, but press on. It starts getting colder when you get closer to the ruins.. you clear the forrest and reach an open cleaning filled with dead flowers, you can see the man off in the distance, he waves urgently and shouts. but it was too late. after turning around all you see along the entire edgeline of the forrest cold, almost dead eyes thousands of them as far left and right as you can see, seconds later your surrounded by night terrors") 
+        @npc1 = ("Night horrors")
+        @npc1_voice = ("Can only be described as A8D9__█░░█░█░█_D1C2H█░█░█9I1D█░░█░░9J9H3E0")
+        @chapter_intro = ("After entering the forrest you start hearing sounds all around you, #{npc1} the sounds #{@npc1_voice} but you press on. It starts getting colder when you get closer to the ruins.. you clear the forrest and reach an open cleaning filled with dead flowers, you can see the man off in the distance, he waves urgently and shouts. but it was too late. after turning around all you see along the entire edgeline of the forrest cold, almost dead eyes thousands of them as far left and right as you can see, seconds later your surrounded by night terrors") 
         #the sentence doesnt like to be shown over multiple lines so it will be one line
         #will leave intro's for the scene and surroundings of the player
         
@@ -64,9 +56,45 @@ class Chapter3
     end
         end
 
-    def get_player_choice()
+    def get_player_choice(player)
             print "Enter your choice: "
             players_choice = gets.to_i - 1 # 0->3
+            while players_choice == 1 #-1 here from each ajusted number
+                if player.check_mana <= 10
+                puts "you dont have the requirements for this (10 Mana)"
+                puts "Enter your choice: "
+                players_choice = gets.to_i - 1
+                else
+                break
+                end
+             end
+             while players_choice == 2 #-1 here from each ajusted number
+                if player.check_mana <= 50
+                puts "you dont have the requirements for this (50 Mana)"
+                puts "Enter your choice: "
+                players_choice = gets.to_i - 1
+                else
+                break
+                end
+             end
+             while players_choice == 3 #-1 here from each ajusted number
+                if player.check_mana <= 320
+                puts "you dont have the requirements for this (320 Mana)"
+                puts "Enter your choice: "
+                players_choice = gets.to_i - 1
+                else
+                break
+                end
+             end
+             while players_choice == 4 #-1 here from each ajusted number
+                if player.check_mana <= 1000
+                puts "you dont have the requirements for this (1000 Mana)"
+                puts "Enter your choice: "
+                players_choice = gets.to_i - 1
+                else
+                break
+                end
+             end
             puts @consequences[players_choice]
             return players_choice
             
@@ -76,33 +104,33 @@ class Chapter3
     def perform(player)
             print_intro(player.name)
             print_options
-            players_choice = get_player_choice
+            players_choice = get_player_choice(player)
             
 
             case players_choice
                 when 0
                     
-                    puts Rainbow("after some time they overwhelm you").red
+                    puts Rainbow("After some time they overwhelm you. Within no time there is not a trace left of what you were. GAME OVER").red
                     player.gain_mana(5)
                     player.start_new_game_plus(true)
                     player.take_damage(10)
                     player.spend_time(1)
                 when 1
-                    puts Rainbow("after some time they overwhelm you").red
+                    puts Rainbow("After some time they overwhelm you. Within no time there is not a trace left of what you were. GAME OVER").red
                     puts Rainbow("gain +100 mana").blue
                     player.gain_mana(100)
                     player.take_damage(10)
                     player.start_new_game_plus(true)
                     player.spend_time(1)
                 when 2
-                    puts Rainbow("after some time they overwhelm you").red
+                    puts Rainbow("After some time they overwhelm you. Within no time there is not a trace left of what you were. GAME OVER").red
                     puts Rainbow("gain +250 mana").blue
                     player.gain_mana(250)
                     player.take_damage(10)
                     player.start_new_game_plus(true)
                     player.spend_time(1)
                 when 3
-                    puts Rainbow("after some time they overwhelm you").red
+                    puts Rainbow("After some time they overwhelm you. Within no time there is not a trace left of what you were. GAME OVER").red
                     puts Rainbow("gain +620 mana").blue
                     player.gain_mana(620)
                     player.take_damage(10)
@@ -111,7 +139,6 @@ class Chapter3
                 when 4
                     player.survived_ch3(true)
                     player.start_new_game_plus(true)
-                    
                     gets
                    # player.ending(true) NEED TO SETUP THIS FOR A ENDING
             end

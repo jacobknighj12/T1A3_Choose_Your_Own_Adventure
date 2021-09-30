@@ -68,6 +68,24 @@ class Chapter2
     def get_player_choice(player)
             print "Enter your choice: "
             players_choice = gets.to_i - 1 # 0->3
+            while players_choice == 2 #-1 here from each ajusted number
+                if player.check_mana == 0
+                puts "you dont have the requirements for this (Mana)"
+                puts "Enter your choice: "
+                players_choice = gets.to_i - 1
+                else
+                break
+                end
+             end
+            while players_choice == 3 #-1 here from each ajusted number
+                if player.is_new_game_plus = false
+                puts "you dont have the requirements for this (H█░l░█░l█░█p)"
+                puts "Enter your choice: "
+                players_choice = gets.to_i - 1
+                else
+                break
+                end
+             end
             while players_choice == 4 #-1 here from each ajusted number
                 if player.check_gld == 0
                 puts "you dont have the requirements for this (1 gold)"
