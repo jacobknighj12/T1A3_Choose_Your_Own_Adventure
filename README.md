@@ -13,3 +13,5 @@ main.rb requires in each chapter and the player for the app, passes the player i
 the chapter and calls for the players "perform" action to kick off the gameplay loop.
 players actions are called by the chapters to adjust the players stat values, player can
 enter "cheat codes" to start with higher stats.
+
+README.md for Project submission has been relocated to the README_Project folder

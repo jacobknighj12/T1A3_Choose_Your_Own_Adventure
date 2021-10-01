@@ -6,6 +6,7 @@ require_relative "Chapters/Chapter_End"
 require_relative "Player" 
 require 'rainbow'
 require 'tty-link' #intention was to allow the user to click the link in terminal, didnt pan out that way but kept it because it looks nice
+
 chapter_map = []
 puts "This is a choose your own adventure horror game. Please take the time to set the terminal in full screen"
     puts "This game is best played with background music and headphones to set the mood. Please follow the link below"

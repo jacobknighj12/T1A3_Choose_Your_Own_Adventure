@@ -23,7 +23,7 @@ class Chapter2_1
         @consequences.push("Slowly reaching into your bag you find your knife, clasping your hand around it jumping up and with a single motion drawing it from your bag and embedding it into the #{@npc1} you notice as you hold it against the thing, your knife has a dull glow, the #{@npc1} hisses in pain with #{@npc1_voice} and take off breaking out though the thatched roof. You leave the inn going outside")
         @consequences.push("You grab your bag while jumping up and pushing your weight forwards, colliding with #{@npc1} slamming it against the wall, for a breif moment it is stunned and you are able to sprint out of the inn")
         @consequences.push("You roll the dice.")
-        @consequences.push("You reach, but not with your hand, but somthing else you feel as though you can pull it away reaching with your concience it feels like pushing through mud, till you grab onto the light. You feel stronger, the weight of the mud, more like soup now, you pull back to see the #{@npc1} colapse on it'self with incredible force snaps and cracks from all of it's bones as it crumples into a lump of remains. You leave the specticle, having done enough for one night and leave the inn going outside")
+        @consequences.push("You reach, but not with your hand, but something else you feel as though you can pull it away reaching with your concience it feels like pushing through mud, till you grab onto the light. You feel stronger, the weight of the mud, more like soup now, you pull back to see the #{@npc1} colapse on it'self with incredible force snaps and cracks from all of it's bones as it crumples into a lump of remains. You leave the specticle, having done enough for one night and leave the inn going outside")
        
         
     end
@@ -87,27 +87,29 @@ class Chapter2_1
                       
                     player.spend_stamina(30)
                     player.take_damage(40)
-                    puts "-40 Health"
-                    puts "-30 Stamina"
+                    puts Rainbow("-40 Health").red
+                    puts Rainbow("-30 Stamina").yellow
                 when 1
                     player.spend_stamina(30)
-                    puts "-30 Stamina"
+                    puts Rainbow("-30 Stamina").yellow
                 when 2
                     player.spend_stamina(10)
-                    puts "-10 Stamina"
+                    puts Rainbow("-10 Stamina").yellow
                 when 3
                     roll = rand(2)
                 if roll == 1
                     puts "You deftly light the lamp and hold it towards the creature, increasing the output and warming the room, #{@npc1} Screams and #{@npc1_voice}. It takes off breaking out though the thatched roof into the moonlit night. You walk out and leave the inn."
                 else
                     puts "You falter, drop the match after failing to strike it to flame, in that moment The #{npc1} Launches forwards. Your vision goes dark hot liquid is felt on your skin, you start to feel hooks ripping though your arms but then... nothing."
-                    player.take_damage(100)
+                    puts Rainbow("-100 Health")
+                    player.take_damage(100).red
                     player.spend_time(1)
+                    gets
                 end
                 when 4
                     if @current_mana != 0
-                    puts "+45 Mana"
-                    puts "-25 Stamina"
+                    puts Rainbow("+45 Mana").blue
+                    puts Rainbow("-25 Stamina").yellow
                     player.gain_mana(45)
                     player.spend_stamina(25)
                     else

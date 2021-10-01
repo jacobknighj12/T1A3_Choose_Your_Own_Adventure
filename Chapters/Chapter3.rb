@@ -88,6 +88,7 @@ class Chapter3
             case players_choice
                 when 0
                     puts Rainbow("After some time they overwhelm you. Within no time there is not a trace left of what you were. GAME OVER").red
+                    puts Rainbow("gain +5 mana").blue
                     player.gain_mana(5)
                     player.start_new_game_plus(true)
                     player.take_damage(10)

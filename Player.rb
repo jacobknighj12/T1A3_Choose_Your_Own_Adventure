@@ -1,20 +1,18 @@
-
 # require_relative "blacklist"
 class Player
     attr_reader :npc1
-    attr_reader :name   
-    attr_reader :max_hp 
-    attr_reader :hp 
-    attr_reader :gld    
-    attr_reader :stam 
-    attr_reader :mana
-    attr_reader :time
-    attr_reader :door_locked
-    attr_reader :new_game_plus
-    attr_reader :survived_ch3
-    
+    attr_accessor :name   
+    attr_accessor :max_hp 
+    attr_accessor :hp 
+    attr_accessor :gld    
+    attr_accessor :stam 
+    attr_accessor :mana
+    attr_accessor :time
+    attr_accessor :door_locked
+    attr_accessor :new_game_plus
+    attr_accessor :survived_ch3
     # attr_reader :blacklist 
-    #Got stuck on blacklist going to leave it for now... not a essential feature
+    #Got stuck on blacklist going to leave it for now... not a essential feature STILL NOT WORKING THIS GOD DARRRRNNN
     def initialize()
     #     if @time <= 2 #time is a placeholder here need to change for newgame+
     #         secret_title = "Hell_Loop" #Ignore this if your looking here before playing the game, nothing to see here move along.
@@ -22,11 +20,12 @@ class Player
     #             secret_title = " █░░░_░██░ "
     #         end
         #why you no work
-        # blacklist.new
+        # blacklist[] = Blacklist.new()
+        # p blacklist
         # puts "Welcome too" + Rainbow(secret_title).red 
         print "For best player experience, please enter your REAL name: "
         @name = gets.strip
-        # while @name.include? @blacklist
+        # while blacklist.include? @name
         # puts "Unknown: Sorry, What was that I didnt catch it?.... >:("
         # @name = gets.strip
         # end
@@ -73,7 +72,7 @@ class Player
                 @time = 0
                 @new_game_plus = false
                 @survived_ch3 = false
-                end
+        end
         puts "Unknown: So, your name is #{@name}"
         puts "Press the Enter key to continue..."
         gets 
@@ -118,7 +117,7 @@ class Player
         return @mana
     end
     def spend_time(ammount)
-        @time -= ammount
+        @time += ammount
     end
     def check_time()
         return @time
