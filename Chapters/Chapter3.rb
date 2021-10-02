@@ -39,7 +39,7 @@ class Chapter3
 
     def get_player_choice(player)
             print "Enter your choice: "
-            players_choice = gets.to_i - 1 # 0->3
+            players_choice = gets.to_i - 1
             while players_choice == 1 #-1 here from each ajusted number 
                 if player.check_mana <= 9
                 puts "you dont have the requirements for this (10 Mana)"

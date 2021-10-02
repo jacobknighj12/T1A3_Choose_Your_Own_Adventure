@@ -1,3 +1,4 @@
+require_relative "../player_input"
 class Chapter_End
     # All chapters will have this data.
     attr_reader :npc1 # The name of the chapter, duh!
@@ -67,19 +68,13 @@ class Chapter_End
     end
         end
 
-    def get_player_choice()
-            print "Enter your choice: "
-            players_choice = gets.to_i - 1 # 0->3
-            puts word_wrap(@consequences[players_choice])
-            return players_choice
-            
-    end
+    
     
         # All chapters will run perform method at some point possibly multiple times!
     def perform(player)
             print_intro(player.name)
             print_options
-            players_choice = get_player_choice
+            players_choice = get_player_choice(@options, @consequences)
             
 
             case players_choice
@@ -123,10 +118,7 @@ class Chapter_End
                     puts "Did you fail on purpose??! You have doomed us to another L░█P"
                     puts "You fool! it's in the F█lde░█"
                    gets
-                else
-                    puts "Error: user has provided an incorrect value, please enter your option."
-                    players_choice = get_player_choice(player)
-                    return players_choice
+                
             end
             player.spend_time(1)
     end

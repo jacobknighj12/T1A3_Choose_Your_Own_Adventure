@@ -1,3 +1,4 @@
+require_relative "../player_input"
 class Chapter1
     attr_reader :npc1 # Name of the charecter your talking too
     attr_reader :options # The options, the player chooses!
@@ -40,21 +41,6 @@ class Chapter1
             end
         end
 
-    def get_player_choice(player)
-            valid_input = false
-            while !valid_input
-            
-            print "Enter your choice: "
-            players_choice = gets.to_i - 1 # 0->3
-            valid_input = players_choice >= 0 && players_choice < @options.length
-                if !valid_input
-                print "Error: user has provided an incorrect value. \n"
-                end
-            end
-            puts word_wrap(@consequences[players_choice])
-            return players_choice
-    end
-    
     def perform(player)
         
         if player.check_hp != 100
@@ -62,7 +48,7 @@ class Chapter1
         end
             print_intro(player.name)
             print_options
-            players_choice = get_player_choice(player)
+            players_choice = get_player_choice(@options, @consequences)
             case players_choice
                 when 0
                     player.spend_gold(10)
@@ -76,10 +62,7 @@ class Chapter1
                 when 4
                 player.secret_found(10)
                 player.lock_door(true)
-            else
-                # puts "Error: user has provided an incorrect value, please enter your option."
-                # players_choice = get_player_choice(player)
-                # return players_choice
+            
             end
             
     end
