@@ -22,7 +22,10 @@ chapter_map[2] = Chapter3.new(player)
 chapter_map[10] = Chapter2_1.new(player)
 chapter_map[8] = Chapter_End.new(player)
 index = 0
-
+def word_wrap(text, line_width = 200 )
+    return text if line_width <= 0
+  text.gsub(/\n/, ' ').gsub(/(.{1,#{line_width}})(\s+|$)/, "\\1\n").strip
+end
 while true
     
     system("clear")

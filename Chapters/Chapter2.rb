@@ -39,7 +39,7 @@ class Chapter2
             puts "Chapter 2"
             # puts "#{player_name} sees a #{@name}." may use this at some point?
             # puts @art same?
-            puts @chapter_intro
+            puts word_wrap(@chapter_intro)
             puts "What a strange man."
     end
 
@@ -85,7 +85,7 @@ class Chapter2
                 break
                 end
              end
-            puts @consequences[players_choice]
+            puts word_wrap(@consequences[players_choice])
             return players_choice
             
     end
@@ -120,6 +120,10 @@ class Chapter2
                         player.heal_damage(missing_hp)
                         player.spend_gold(missing_hp)
                     end
+                else
+                    puts "Error: user has provided an incorrect value, please enter your option."
+                    players_choice = get_player_choice(player)
+                    return players_choice
             end
     end
     

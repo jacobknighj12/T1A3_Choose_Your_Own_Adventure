@@ -10,6 +10,10 @@ affect the game and story, as well as having unintened dead ends to the story th
 having at least one puzzle in the game, and at least one interaction between the user and the pc they are playing from. finally at least 2 endings that can result from different player actions that can serve as either a moral compass or just due to how well they played the game.
 The jist is that I want to be able to provide a product in a short frame of time so the requirements and work will be kept within a small scope and may be expanded over time to provide more features, however the scope may be shrank if this project is to ambitious(I dont think it is currently?)
 
+### R4 Source control for this project is located here
+
+https://github.com/jacobknighj12/T1A3_Choose_Your_Own_Adventure
+
 ### R5 The problems this will be solving are:
 
 - Current lack of adventure
@@ -77,6 +81,7 @@ in a text format displayed in a terminal capable of running the current ruby 2.7
   In this trello they are ordered by Priority and all have and will be orginized by when they are started, partialy complete, fully complete and when they break.
   Unfortunatly the automatic in build timelines are a premuim feature so I resorted to labling each feature with an expected finish date for each feature to be fully completed and functioning with the rest of the program.
   ![T1A3_Trello](T1A3_Trello.jpg)
+  ![Updated_Trello](Trello_update.jpg)
 
 ### R10 Design help documentation which includes a set of instructions which accurately describe how to use and install the application.
 
@@ -98,3 +103,26 @@ You must include:
 
   233 MHz processor, 64 MB of RAM, 1.5 GB of available hard drive space, and an SVGA-capable video card. are the minimum requirements
   to run windows xp, if you can run that you will be able to run this.
+
+Updated instructions on how to install and run the program, have been tested with a industry professional.
+
+To install this project;
+Git clone git@github.com:jacobknighj12/T1A3_Choose_Your_Own_Adventure.git
+
+Required dependancies:
+Ruby 2.7.2
+gem 'rainbow', '~> 3.0'
+gem 'tty-link', '~> 0.1.1'
+
+Optional dependancy for testing purposes; for use run from player_spec.rb:
+gem 'rspec', '~> 3.0'
+
+Run project from main.rb in terminal
+
+Project structure:
+main.rb requires in each chapter and the player for the app, passes the player into
+the chapter and calls for the players "perform" action to kick off the gameplay loop.
+players actions are called by the chapters to adjust the players stat values, player can
+enter "cheat codes" to start with higher stats.
+
+README.md for Project submission has been relocated to the README_Project folder

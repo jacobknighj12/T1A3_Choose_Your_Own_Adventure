@@ -6,6 +6,9 @@ Ruby 2.7.2
 gem 'rainbow', '~> 3.0'
 gem 'tty-link', '~> 0.1.1'
 
+Optional dependancy for testing purposes; for use run from player_spec.rb:
+gem 'rspec', '~> 3.0'
+
 Run project from main.rb in terminal
 
 Project structure:

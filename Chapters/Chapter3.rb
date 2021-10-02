@@ -26,7 +26,7 @@ class Chapter3
     end
      def print_intro(player_name)
             puts "Chapter 3"
-            puts @chapter_intro
+            puts word_wrap(@chapter_intro)
     end
 
     def print_options()
@@ -76,7 +76,7 @@ class Chapter3
                 break
                 end
              end
-            puts @consequences[players_choice]
+            puts word_wrap(@consequences[players_choice])
             return players_choice
     end
     
@@ -118,6 +118,10 @@ class Chapter3
                     player.survived_ch3(true)
                     player.start_new_game_plus(true)
                     gets
+                else
+                    puts "Error: user has provided an incorrect value, please enter your option."
+                    players_choice = get_player_choice(player)
+                    return players_choice
             end
     end
     

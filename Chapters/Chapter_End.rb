@@ -42,7 +42,7 @@ class Chapter_End
             puts "Welcome to THE END"
             # puts "#{player_name} sees a #{@name}." may use this at some point?
             # puts @art same?
-            puts @chapter_intro
+            puts word_wrap(@chapter_intro)
             puts "..."
             gets
             puts player_name + ".. turns to ░_Y█u" 
@@ -70,7 +70,7 @@ class Chapter_End
     def get_player_choice()
             print "Enter your choice: "
             players_choice = gets.to_i - 1 # 0->3
-            puts @consequences[players_choice]
+            puts word_wrap(@consequences[players_choice])
             return players_choice
             
     end
@@ -123,6 +123,10 @@ class Chapter_End
                     puts "Did you fail on purpose??! You have doomed us to another L░█P"
                     puts "You fool! it's in the F█lde░█"
                    gets
+                else
+                    puts "Error: user has provided an incorrect value, please enter your option."
+                    players_choice = get_player_choice(player)
+                    return players_choice
             end
             player.spend_time(1)
     end

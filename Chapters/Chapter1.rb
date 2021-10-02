@@ -29,7 +29,7 @@ class Chapter1
     end
         def print_intro(player_name)
          puts "Chapter 1"
-         puts @chapter_intro
+         puts word_wrap(@chapter_intro)
         end
 
         def print_options()
@@ -44,7 +44,7 @@ class Chapter1
             print "Enter your choice: "
             players_choice = gets.to_i - 1 # 0->3
             
-            puts @consequences[players_choice]
+            puts word_wrap(@consequences[players_choice])
             return players_choice
     end
     
@@ -69,6 +69,10 @@ class Chapter1
                 when 4
                 player.secret_found(10)
                 player.lock_door(true)
+            else
+                puts "Error: user has provided an incorrect value, please enter your option."
+                players_choice = get_player_choice(player)
+                return players_choice
             end
             
     end

@@ -29,7 +29,7 @@ class Chapter2_1
     end
     def print_intro(player_name)
             puts "Chapter 2.1"
-            puts @chapter_intro
+            puts word_wrap(@chapter_intro)
             puts "You drift off to sleep..."
             puts "Press the Enter key to continue..."
             gets
@@ -43,7 +43,7 @@ class Chapter2_1
             if input.include? "2"
                 puts "You think to yourself, why would I say that..."
             end
-            puts "...Your paralyzed. All you can do is open your eyes to the thing that now breathes even more cold air around you, theres only moonlight silhouetting the thing, with a few highlights over however it's giving you more than enough information. Around what you assume is the 'face' is long hook like teeth jutting out more than an arms length outwards, it's form looks like that of a leech made of bone and sparse flesh, of that flesh that it has is glistening as though being completely frozen."
+            puts word_wrap("...Your paralyzed. All you can do is open your eyes to the thing that now breathes even more cold air around you, theres only moonlight silhouetting the thing, with a few highlights over however it's giving you more than enough information. Around what you assume is the 'face' is long hook like teeth jutting out more than an arms length outwards, it's form looks like that of a leech made of bone and sparse flesh, of that flesh that it has is glistening as though being completely frozen.")
             puts "Press the Enter key to continue..."
             gets
             puts "The #{npc1} comes closer slowly creeping forwards, you feel like you can move again."
@@ -70,7 +70,7 @@ class Chapter2_1
                 end
              end
 
-            puts @consequences[players_choice]
+            puts word_wrap(@consequences[players_choice])
             return players_choice
             end
 
@@ -120,7 +120,10 @@ class Chapter2_1
                         
                       end
                     end
-                
+                else
+                    puts "Error: user has provided an incorrect value, please enter your option."
+                    players_choice = get_player_choice(player)
+                    return players_choice
             end
     
 
