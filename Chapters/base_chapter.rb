@@ -4,5 +4,11 @@ class BaseChapter
     attr_reader :consequences # The consequence of the players choice of options.
     attr_reader :chapter_intro # Intro for the chapter!
     attr_reader :name #you?
-
+    def print_options()
+        options_index = 0
+        for option in @options
+            puts "#{options_index + 1}. #{option}"
+            options_index += 1
+        end
+    end
 end

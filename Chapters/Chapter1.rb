@@ -2,8 +2,6 @@ require_relative "../player_input"
 require_relative './base_chapter'
 class Chapter1 < BaseChapter
     
-    
-    
     def initialize(player)
         @testing = true
         #testing values for comparison
@@ -31,13 +29,7 @@ class Chapter1 < BaseChapter
          puts word_wrap(@chapter_intro)
         end
 
-        def print_options()
-            options_index = 0
-            for option in @options
-                puts "#{options_index + 1}. #{option}"
-                options_index += 1
-            end
-        end
+        
 
     def perform(player)
         

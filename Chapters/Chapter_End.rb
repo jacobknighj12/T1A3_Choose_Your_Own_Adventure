@@ -56,13 +56,7 @@ class Chapter_End < BaseChapter
             puts "#{npc1} 'You should have some... control over this world. with my strength all I could do was " + Rainbow("Create").gold + " somthing, you need to find that creation. it has the " + Rainbow("Code.").purple + "'"
     end
 
-    def print_options()
-            options_index = 0
-            for option in @options
-                puts "#{options_index + 1}. #{option}"
-                options_index += 1 #CURRENTLY THIS INTENTIONALLY KILLS THE GAME WHEN YOU GET HERE BECAUSE IM NOT SURE HOW ELSE SO THE ERROR THAT THIS GIVES IS EXPECTED 
-    end
-        end
+    
 
     
     

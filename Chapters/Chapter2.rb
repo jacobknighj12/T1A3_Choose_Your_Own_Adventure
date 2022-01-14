@@ -28,13 +28,8 @@ class Chapter2 < BaseChapter
             puts "What a strange man."
     end
 
-    def print_options()
-            options_index = 0
-            for option in @options
-                puts "#{options_index + 1}. #{option}"
-                options_index += 1
-    end
-        end
+    
+        
 
     def get_player_choice(player)
             print "Enter your choice: "

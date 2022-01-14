@@ -46,13 +46,7 @@ class Chapter2_1 < BaseChapter
             puts "The #{npc1} comes closer slowly creeping forwards, you feel like you can move again."
     end
 
-    def print_options()
-            options_index = 0
-            for option in @options
-                puts "#{options_index + 1}. #{option}"
-                options_index += 1
-            end
-    end
+    
 
     def get_player_choice(player)
             print "Enter your choice: "
