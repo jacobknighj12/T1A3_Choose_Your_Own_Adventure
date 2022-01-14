@@ -5,10 +5,10 @@ class BaseChapter
     attr_reader :chapter_intro # Intro for the chapter!
     attr_reader :name #you?
     def print_options()
-        options_index = 0
-        for option in @options
+        
+        @options.each_with_index do |option, options_index|
             puts "#{options_index + 1}. #{option}"
-            options_index += 1
+            
         end
     end
 end
