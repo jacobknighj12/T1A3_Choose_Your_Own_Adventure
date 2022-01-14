@@ -4,7 +4,7 @@ class Chapter2 < BaseChapter
         
         @npc1 = ("Samos")
         @npc1_voice = ("like a creaking old oak")
-        @chapter_intro = ("When the morning breaks, many voices from all around are all saying similar things, how cold the night was, they thought they saw something, a man went missing in his room because he left it unlocked, a strange hole appearing in the roof of the inn. You are sitting out the front of the inn while feeding a campfire you made to warm yourself up from the cold of last night, a man waring strange attire a flowing robe with ornaments and strange letters walks over to you Unknown:'Do you mind if I sit?' In a voice you can only describe as #{@npc1_voice} as he gestures to a space next to the fire, he sit's down without waiting for a response, #{@npc1} 'My name is #{@npc1}. I know what _░░░█░█ you, #{player.name}. However I need your help, if you do I can help you, if you wish to see me again go to the ruins in the northern forest'  you glace to the fire for a moment as it crackles then look back, and his gone. 'I'm not sure whats up with that man, but I need to find out whats going on with me I keep feeling weirder every moment.'") 
+        @chapter_intro = ("When the morning breaks, many voices from all around are all saying similar things, how cold the night was, they thought they saw something, a man went missing in his room because he left it unlocked, a strange hole appearing in the roof of the inn. You are sitting out the front of the inn while feeding a campfire you made to warm yourself up from the cold of last night, a man waring strange attire a flowing robe with ornaments and strange letters walks over to you Unknown:'Do you mind if I sit?' In a voice you can only describe as #{@npc1_voice} as he gestures to a space next to the fire, he sit's down without waiting for a response, #{@npc1} 'My name is #{@npc1}. I know what _░░░█░█ you, #{player.name}. However I need your help, if you do I can help you, if you wish to see me again go to the ruins in the northern forest'  you glace to the fire for a moment as it crackles then look back, and his gone. 'I'm not sure whats up with that man, but I need to find out whats going on with me I keep feeling weirder every moment. What a strange man.'") 
         
         @options = []
         @options.push("Go out to the north forests ruins.")
@@ -21,11 +21,10 @@ class Chapter2 < BaseChapter
         @consequences.push("You go out to try and find somwhere like a herbalists open to get some basic supplies to fix yourself up, fortunately.(1 gold per hp healed)")
       
     end
-    def print_intro(player_name)
-
-            puts "Chapter 2"
+    def print_intro(player_name, chapter_title)
+            puts chapter_title
             puts word_wrap(@chapter_intro)
-            puts "What a strange man."
+            
     end
 
     
@@ -71,7 +70,8 @@ class Chapter2 < BaseChapter
     end
     
     def perform(player)
-            print_intro(player.name)
+
+            print_intro(player.name, "Chapter 2")
             print_options
             players_choice = get_player_choice(player)
             

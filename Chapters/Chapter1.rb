@@ -24,8 +24,8 @@ class Chapter1 < BaseChapter
         @consequences.push("Haze pushes into your mind, it hurts to think you feel like you paid for your drinks and room but then slowly started feeling as if something was starting to.. sit on your shoulder? You ask for your room key from #{@npc1} and head up the stairs to your room. #{@npc1} says something after you get up but you cant understand it and continue up to your room.")
         @consequences.push("Haze pushes into your mind, it hurts to think the words you expected to come from your mouth dont feel like your own. Something feels different. 'You aight there buddy? #{@npc1} says #{@npc1_voice} *You look up from holding your head to see concern in the old mans face* 'ere, yer key go to bed and take rest for the night, remember to lock your door.' ")
     end
-        def print_intro(player_name)
-         puts "Chapter 1"
+        def print_intro(player_name, chapter_title)
+         puts chapter_title
          puts word_wrap(@chapter_intro)
         end
 
@@ -36,7 +36,8 @@ class Chapter1 < BaseChapter
         if player.check_hp != 100
           puts  Rainbow("You feel bruises and cuts on your body but dont remember getting them, whats going on...").yellow
         end
-            print_intro(player.name)
+            print_intro(player.name, 'Chapter 1')
+            
             print_options
             players_choice = get_player_choice(@options, @consequences)
             case players_choice
