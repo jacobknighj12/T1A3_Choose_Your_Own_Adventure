@@ -1,8 +1,5 @@
 require_relative './base_chapter'
 class Chapter3 < BaseChapter
-    attr_reader :options # The options, the player chooses!
-    attr_reader :consequences # The consequence of the players choice of options.
-    attr_reader :chapter_intro # Intro for the chapter!
     def initialize(player)
         @npc1 = ("Night horrors")
         @npc1_voice = ("Can only be described as A8D9__█░░█░█░█_D1C2H█░█░█9I1D█░░█░░9J9H3E0")

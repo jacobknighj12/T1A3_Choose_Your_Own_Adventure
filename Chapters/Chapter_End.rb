@@ -1,10 +1,6 @@
 require_relative "../player_input"
 require_relative './base_chapter'
 class Chapter_End < BaseChapter
-    # All chapters will have this data.
-    attr_reader :options # The options, the player chooses!
-    attr_reader :consequences # The consequence of the players choice of options.
-    attr_reader :chapter_intro # Intro for the chapter!
     def initialize(player)
         @times_died = player.check_time
         @npc1 = ("Samos")

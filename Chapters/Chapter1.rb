@@ -2,10 +2,7 @@ require_relative "../player_input"
 require_relative './base_chapter'
 class Chapter1 < BaseChapter
     
-    attr_reader :options # The options, the player chooses!
-    attr_reader :consequences # The consequence of the players choice of options.
-    attr_reader :chapter_intro # Intro for the chapter!
-    attr_reader :name #you?
+    
     
     def initialize(player)
         @testing = true
