@@ -21,8 +21,8 @@ class Chapter3 < BaseChapter
         
         
     end
-     def print_intro(player_name)
-            puts "Chapter 3"
+     def print_intro(player_name, chapter_title)
+            puts chapter_title
             puts word_wrap(@chapter_intro)
     end
 
@@ -72,7 +72,7 @@ class Chapter3 < BaseChapter
     end
     
     def perform(player)
-            print_intro(player.name)
+            print_intro(player.name, "Chapter 3")
             print_options
             players_choice = get_player_choice(player)
             

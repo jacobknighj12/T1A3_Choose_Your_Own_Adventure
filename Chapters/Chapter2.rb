@@ -70,7 +70,6 @@ class Chapter2 < BaseChapter
     end
     
     def perform(player)
-
             print_intro(player.name, "Chapter 2")
             print_options
             players_choice = get_player_choice(player)

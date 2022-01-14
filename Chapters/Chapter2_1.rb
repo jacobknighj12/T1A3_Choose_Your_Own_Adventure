@@ -24,8 +24,8 @@ class Chapter2_1 < BaseChapter
        
         
     end
-    def print_intro(player_name)
-            puts "Chapter 2.1"
+    def print_intro(player_name, chapter_title)
+            puts chapter_title
             puts word_wrap(@chapter_intro)
             puts "You drift off to sleep..."
             puts "Press the Enter key to continue..."
@@ -66,7 +66,7 @@ class Chapter2_1 < BaseChapter
             end
 
         def perform(player)
-            print_intro(player.name)
+            print_intro(player.name, "Chapter 2.1")
             print_options
             players_choice = get_player_choice(player)
             @current_mana = player.check_mana

@@ -34,9 +34,9 @@ class Chapter_End < BaseChapter
         
     end
     # Well, #{player.name} #{@npc1} #{npc1_voice} states. You probably dont want to hang around long the night terror has been stalking this area,you may want to finish your drink and leave soon.
-    def print_intro(player_name)
+    def print_intro(player_name, chapter_title)
 
-            puts "Welcome to THE END"
+            puts chapter_title
             # puts "#{player_name} sees a #{@name}." may use this at some point?
             # puts @art same?
             puts word_wrap(@chapter_intro)
@@ -62,7 +62,7 @@ class Chapter_End < BaseChapter
     
         # All chapters will run perform method at some point possibly multiple times!
     def perform(player)
-            print_intro(player.name)
+            print_intro(player.name, "Welcome to THE END")
             print_options
             players_choice = get_player_choice(@options, @consequences)
             
